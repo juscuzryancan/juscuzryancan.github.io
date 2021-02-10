@@ -1,0 +1,2 @@
+(this.webpackJsonppersonal_website=this.webpackJsonppersonal_website||[]).push([[0],{31:function(e,t,n){"use strict";n.r(t);n(0);var s=n(10),c=n.n(s),r=n(17),a=n(3),i=n(8),o=function(){return Object(i.jsxs)(r.a,{children:[Object(i.jsx)(b,{}),Object(i.jsx)(a.a,{exact:!0,path:"/"})]})},j=n(19),b=function(){return Object(i.jsx)(j.a,{children:"Ryan Riley Puzon"})};n(30);c.a.render(Object(i.jsx)(o,{}),document.getElementById("root"))}},[[31,1,2]]]);
+//# sourceMappingURL=main.2b7e2b76.chunk.js.map
