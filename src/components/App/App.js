@@ -6,13 +6,13 @@ import {
 } from 'react-router-dom'
 
 import {
-    Nav
+    Header
 } from '../';
 
 const App = () => {
     return (
         <Router>
-            <Nav></Nav>
+            <Header />
             <Route exact path='/'>
 
             </Route>
