@@ -1,12 +1,13 @@
 import './styles.css';
-import {default as Navigation} from '../Navigation';
-import {default as Hero} from "../Hero"
+import { Navigation } from '../'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Navigation />
-      <Hero />
+      <main>
+
+      </main>
     </div>
   );
 }
