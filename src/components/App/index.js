@@ -1,13 +1,15 @@
 import './styles.css';
-import { Navigation } from '../'
+import { Navigation, Hero } from '../'
+import Footer from '../Footer';
 
 const App = () => {
   return (
     <div className="App">
       <Navigation />
       <main>
-
+        <Hero />
       </main>
+      <Footer />
     </div>
   );
 }

@@ -1,4 +1,7 @@
 .navigation {
-    display: flex;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
     justify-content: space-between;
+    height: 2rem;
 }
