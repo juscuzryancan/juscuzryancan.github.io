@@ -3,11 +3,11 @@ import './styles.css';
 const Skills = () => {
 
     return (
-        <div>
+        <div className='skills'>
             <h2>Skills</h2>
-            <div>
-                <h3>Proficient</h3>
+            <div className='skills-lists-container'>
                 <ul>
+                    <h3>Proficient</h3>
                     <li>JavaScript</li>
                     <li>HTML5</li> 
                     <li>CSS3</li> 
@@ -17,17 +17,13 @@ const Skills = () => {
                     <li>Express</li>
                     <li>Git</li>
                 </ul>
-            </div>
-            <div>
-                <h3>Knowledgable</h3> 
                 <ul>
+                    <h3>Knowledgable</h3> 
                     <li>Java</li>
                     <li>PostgresQL</li>
                 </ul>
-            </div>
-            <div>
-                <h3>Some Familiarity</h3> 
                 <ul>
+                    <h3>Some Familiarity</h3> 
                     <li>Python</li>
                     <li>Bootstrap</li>
                     <li>Heroku</li>

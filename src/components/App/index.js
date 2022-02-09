@@ -1,5 +1,5 @@
 import './styles.css';
-import { Navigation, Hero } from '../'
+import { Navigation, Hero, Skills, Projects, Contact } from '../'
 import Footer from '../Footer';
 
 const App = () => {
@@ -8,6 +8,9 @@ const App = () => {
       <Navigation />
       <main>
         <Hero />
+        <Skills />
+        <Projects />
+        <Contact />
       </main>
       <Footer />
     </div>
