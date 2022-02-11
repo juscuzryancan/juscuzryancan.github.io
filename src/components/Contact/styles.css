@@ -1,0 +1,10 @@
+.contacts-container {
+	display: flex;
+	gap: 2rem;
+}
+
+.contact {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

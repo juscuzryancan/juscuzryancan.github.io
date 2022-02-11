@@ -1,3 +1,8 @@
+:root {
+    --primary-color: #2E361C;
+    --secondary-color: #7d7e75;
+}
+
 html{
     margin: 0;
     box-sizing: border-box;
