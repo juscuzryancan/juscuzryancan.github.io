@@ -4,7 +4,7 @@ import "./styles.css";
 const Hero = () => {
 
     return (
-        <div className="hero-banner">
+        <div className="hero-banner" id="about">
             <img  src={PFP} alt="Candid of me with a nice sunset"/> 
             <div className="hero-banner-text">
                 <div className="hero-banner-text-intro">

@@ -1,6 +1,5 @@
 import './styles.css';
-import { Navigation, Hero, Skills, Projects, Contact } from '../'
-import Footer from '../Footer';
+import { Navigation, Hero, Skills, Projects, Contact, Footer } from '../'
 
 const App = () => {
   return (
@@ -12,7 +11,7 @@ const App = () => {
         <Projects />
         <Contact />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

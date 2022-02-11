@@ -1,4 +1,5 @@
 import './styles.css';
+//TODO: add separate links for the deploy and the github links
 
 const Projects = () => {
     const projectsArray = [
@@ -25,12 +26,12 @@ const Projects = () => {
     ];
 
     return (
-        <div className='projects'>
+        <div className='projects' id='projects'>
             <h3>Projects</h3>
-            {projectsArray.map(({title, link, description}) => {
+            {projectsArray.map(({title, link, description}, index) => {
                 return (
-                    <section className="project">
-                        <a href={link} target="_blank">
+                    <section className="project" key={index}>
+                        <a href={link} target="_blank" rel="noreferrer">
                             <h4>{title}</h4>
                         </a>
                         <p>
@@ -41,25 +42,6 @@ const Projects = () => {
             })}
         </div>
     );
-
-    // return (
-
-    //     <div className='projects'>
-    //         <h3>Projects</h3>
-    //         <div>
-    //             <a href="http://virtual-traders.herokuapp.com/">Virtual Traders</a>
-    //         </div>
-    //         <div>
-    //             <a href="https://ftnss-trckr.herokuapp.com/">Fitness Trackr</a>
-    //         </div>
-    //         <div>
-    //             <a href="https://kind-mahavira-29ba42.netlify.app/">Strangers Things</a>
-    //         </div>
-    //         <div>
-    //             <a href="https://flamboyant-liskov-0c5218.netlify.app/minesweeper/">Minesweeper</a>
-    //         </div>
-    //     </div>
-    // );
 }
 
 export default Projects;
