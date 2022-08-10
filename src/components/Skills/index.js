@@ -3,6 +3,7 @@ import './styles.css';
 const Skills = () => {
 
     return (
+      <section>
         <div className='skills' id='skills'>
             <h2>Skills</h2>
             <div className='skills-lists-container'>
@@ -30,8 +31,8 @@ const Skills = () => {
                 </ul>
             </div>
         </div>
+      </section>
     );
-
 }
 
 export default Skills;

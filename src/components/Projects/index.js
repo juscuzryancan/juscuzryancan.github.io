@@ -26,21 +26,23 @@ const Projects = () => {
     ];
 
     return (
+      <section>
         <div className='projects' id='projects'>
             <h3>Projects</h3>
             {projectsArray.map(({title, link, description}, index) => {
                 return (
-                    <section className="project" key={index}>
+                    <div className="project" key={index}>
                         <a href={link} target="_blank" rel="noreferrer">
                             <h4>{title}</h4>
                         </a>
                         <p>
                             {description}
                         </p>
-                    </section>
+                    </div>
                 );
             })}
         </div>
+      </section>
     );
 }
 

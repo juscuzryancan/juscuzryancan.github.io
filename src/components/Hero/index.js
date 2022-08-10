@@ -4,6 +4,7 @@ import "./styles.css";
 const Hero = () => {
 
     return (
+      <section>
         <div className="hero-banner" id="about">
             <img  src={PFP} alt="Candid of me with a nice sunset"/> 
             <div className="hero-banner-text">
@@ -16,6 +17,7 @@ const Hero = () => {
                 <div className="hero-banner-text-intro">"I will therefore, I am" - Ryan Riley Puzon</div>
             </div>
         </div>
+      </section>
     )
 }
 
