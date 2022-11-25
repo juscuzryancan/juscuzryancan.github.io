@@ -2,7 +2,7 @@ import { Navigation, Hero, Skills, Projects, Contact, Footer } from "./";
 
 const App = () => {
   return (
-    <div className="">
+    <div className="flex">
       <Navigation />
       <Hero />
       <Skills />

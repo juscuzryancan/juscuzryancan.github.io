@@ -2,7 +2,7 @@ const Skills = () => {
 
     return (
       <section>
-        <div className='skills' id='skills'>
+        <div className="" id='skills'>
             <h2>Skills</h2>
             <div className='skills-lists-container'>
                 <ul>

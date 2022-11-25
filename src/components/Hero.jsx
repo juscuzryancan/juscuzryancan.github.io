@@ -1,9 +1,9 @@
-import PFP from "../assets/pfp.jpg";
+// import PFP from "../assets/pfp.jpg";
 const Hero = () => {
 
   return (
-    <section className="hero-banner" id="about">
-      <img className="w-screen" src={PFP} alt="Candid of me with a nice sunset"/> 
+    <section className="" id="about">
+      {/* <img className="w-screen" src={PFP} alt="Candid of me with a nice sunset"/>  */}
         <div className="hero-banner-text">
           <div className="hero-banner-text-intro">
           I'm a software developer harnessing the world's power for its biggest problems. 

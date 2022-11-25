@@ -1,9 +1,9 @@
 const Navigation = () => {
 
   return (
-    <nav className='navigation'>
+    <nav className='flex '>
       <h1>Ryan Riley Puzon</h1>
-      <div className='nav-link-container'>
+      <div className=''>
         <a className='nav-links' href="#about">About</a>
         <a className='nav-links' href="#skills">Skills</a>
         <a className='nav-links' href="#projects">Projects</a>
