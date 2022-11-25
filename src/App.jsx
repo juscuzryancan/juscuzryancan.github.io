@@ -2,13 +2,13 @@ import { Navigation, Hero, Skills, Projects, Contact, Footer } from "./component
 
 const App = () => {
   return (
-    <div className="flex">
-      <Navigation />
+    <>
+      {/* <Navigation /> */}
       <Hero />
       <Skills />
       <Projects />
       <Contact />
-    </div>
+    </>
   );
 };
 
