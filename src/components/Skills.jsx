@@ -1,36 +1,64 @@
+const skills = [
+  {
+    level: "Proficient",
+    list: [
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Node.js",
+      "React",
+      "Axios",
+      "Express",
+      "Git"
+    ]
+  },
+  {
+    level: "Knowledgable",
+    list: [
+      "Java",
+      "PostgreSQL"
+    ]
+  },
+  {
+    level: "Some Familiarity",
+    list: [
+      "Python",
+      "Bootstrap",
+      "Heroku"
+    ]
+  },
+];
+
+const Skill = ({
+  level,
+  list
+}) => {
+  return (
+    <div className="bg-secondary basis-1/3 p-8 rounded-lg flex-grow">
+      <h2 className="text-3xl">{level}</h2>
+      {list.map((elem, i)=> <div key={i}>{elem}</div>)}
+    </div>
+  );
+}
+
 const Skills = () => {
 
-    return (
-      <section>
-        <div className="" id='skills'>
-            <h2>Skills</h2>
-            <div className='skills-lists-container'>
-                <ul>
-                    <h3>Proficient</h3>
-                    <li>JavaScript</li>
-                    <li>HTML5</li> 
-                    <li>CSS3</li> 
-                    <li>Node.js</li>
-                    <li>React</li>
-                    <li>Axios</li>
-                    <li>Express</li>
-                    <li>Git</li>
-                </ul>
-                <ul>
-                    <h3>Knowledgable</h3> 
-                    <li>Java</li>
-                    <li>PostgresQL</li>
-                </ul>
-                <ul>
-                    <h3>Some Familiarity</h3> 
-                    <li>Python</li>
-                    <li>Bootstrap</li>
-                    <li>Heroku</li>
-                </ul>
-            </div>
+  return (
+    <div 
+      id="skills"
+      className="p-8"
+    >
+      <div className="p-16" id='skills'>
+        <h2 className="text-6xl flex justify-center mb-4">Skills</h2>
+        <div className="flex justify-center">
+          <div className="flex justify-center gap-40">
+            {skills.map((skill, i) => <Skill key={i} {...skill}/>)}
+          </div>
         </div>
-      </section>
-    );
+      </div>
+    </div>
+  );
+
 }
 
 export default Skills;
