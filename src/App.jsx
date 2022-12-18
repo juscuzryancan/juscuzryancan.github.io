@@ -1,5 +1,4 @@
 import { Navigation, Hero, Skills, Projects, Footer } from "./components";
-import { Routes, Route } from "react-router-dom";
 import run from "./assets/running.JPG";
 
 const App = () => {
@@ -9,7 +8,8 @@ const App = () => {
       <Hero />
       <Skills />
         <div className="flex justify-center">
-          <img className="w-1/3 shadow-sm rounded" src={run} alt="runing"/>
+          <img className="m-4 p-4 rounded
+          sm:w-1/3" src={run} alt="runing"/>
         </div>
       <Projects />
       <Footer />

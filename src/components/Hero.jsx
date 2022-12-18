@@ -4,8 +4,8 @@ const Hero = () => {
 
   return (
     <div 
-      className="flex flex-col justify-around items-center bg-secondary gap-8 snap-center m-8 p-8 shadow shadow-primary
-      sm:flex-row sm:gap-8 sm:h-full sm:w-auto"
+      className="flex flex-col justify-around items-center bg-secondary gap-8 snap-center m-4 p-4 shadow shadow-primary
+      sm:flex-row sm:gap-8 sm:h-full sm:w-auto sm:p-8 sm:m-16"
       id="about"
     >
       <div className="flex flex-col gap-4 max-w-2xl">

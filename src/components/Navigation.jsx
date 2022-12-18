@@ -1,9 +1,8 @@
-import { Link }  from "react-router-dom";
-
 const Navigation = () => {
 
   return (
-    <nav className="flex gap-8 justify-end p-8">
+    <nav className="flex gap-8 justify-center p-8
+      sm:justify-end">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
