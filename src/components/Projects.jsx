@@ -8,7 +8,7 @@ import virtualTraders from "../assets/virtual_traders.png";
 const projectsArray = [
   {
     title: "Virtual Traders",
-    link: "http://virtual-traders.herokuapp.com/" ,
+    link: "https://virtual-velocity-production.up.railway.app/" ,
     description: "Fullstack Ecommerce Website For Selling Trading Cards",
     img: virtualTraders
   },
