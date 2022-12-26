@@ -14,7 +14,7 @@ const projectsArray = [
   },
   {
     title: "Fitness Trackr",
-    link: "https://ftnss-trckr.herokuapp.com/" ,
+    link: "https://fitnesstrac-kr.onrender.com/" ,
     description: "Fullstack Website For Sharing Workouts",
     img: fitnessTracker
   },
