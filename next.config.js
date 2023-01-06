@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 const isGithubActions = process.env.GITHUB_ACTIONS || false
 
-let assetPrefix = ''
-let basePath = ''
+let assetPrefix = '';
 
 if (isGithubActions) {
   // trim off `<owner>/`
@@ -16,9 +15,9 @@ if (isGithubActions) {
 const nextConfig = {
   reactStrictMode: true,
   basePath: basePath,
+  assetPrefix,
   images: {
-    loader: 'akamai',
-    path: '',
+    unoptimized: true
   },
 }
 
