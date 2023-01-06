@@ -16,10 +16,10 @@ if (isGithubActions) {
 const nextConfig = {
   reactStrictMode: true,
   basePath: basePath,
-  // images: {
-  //   loader: 'imgix',
-  //   path: 'https://juscuzryancan.imgix.net/',
-  // },
+  images: {
+    loader: 'akamai',
+    path: '',
+  },
 }
 
 module.exports = nextConfig

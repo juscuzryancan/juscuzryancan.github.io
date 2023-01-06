@@ -98,7 +98,7 @@ const Projects = () => {
           {projectsArray.map((project, index) => <ProjectCard key={index} {...project}/>)}
         </div>
       </m.div>
-      </>
+    </>
   );
 
 }
