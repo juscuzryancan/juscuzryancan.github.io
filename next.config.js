@@ -15,12 +15,11 @@ if (isGithubActions) {
 
 const nextConfig = {
   reactStrictMode: true,
-  assetPrefix: assetPrefix,
   basePath: basePath,
-  images: {
-    loader: 'imgix',
-    path: 'https://juscuzryancan.imgix.net/',
-  },
+  // images: {
+  //   loader: 'imgix',
+  //   path: 'https://juscuzryancan.imgix.net/',
+  // },
 }
 
 module.exports = nextConfig

@@ -53,12 +53,12 @@ const ProjectCard = ({
         rel="noreferrer"
       >
         <Image className="rounded-md h-full w-full" src={img} alt="project" />
-        <div className="hidden absolute p-8 h-full w-full top-0 left-0 flex-col items-center justify-center z-10
-          before:content-[''] before:bg-tertiary/30 before:absolute before:w-full before:h-full before:rounded
+        <div className="hidden absolute p-8 h-full w-full top-0 left-0 flex-col items-center justify-center z-10 text-white
+          before:content-[''] before:bg-black/70 before:absolute before:w-full before:h-full before:rounded
           group-hover:flex"
         >
-          <h4 className="text-slate-50">{title}</h4>
-          <p>
+          <h4 className="z-20">{title}</h4>
+          <p className="z-20">
             {description}
           </p>
         </div>
@@ -89,7 +89,8 @@ const Projects = () => {
         h-screen w-screen
         bg-secondary 
         flex-grow 
-        shadow-2xl shadow-tertiary/20"
+        shadow-2xl shadow-tertiary/20
+        dark:bg-primary dark:text-white"
       >
         <h2 className="flex justify-center text-4xl px-8">Projects</h2>
         <div className="flex flex-col flex-grow p-8 gap-4

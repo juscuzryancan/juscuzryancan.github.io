@@ -1,6 +1,12 @@
 import Head from 'next/head';
 import { motion as m } from "framer-motion";
 
+
+interface SkillProps {
+  level: string,
+  list: Array<string>
+}
+
 const skills = [
   {
     level: "Proficient",
@@ -35,10 +41,11 @@ const skills = [
 const Skill = ({
   level,
   list
-}: any) => {
+}: SkillProps) => {
   return (
-    <div className="flex flex-col items-center bg-secondary basis-3/4 p-8 rounded-lg flex-grow shadow-sm
-      sm:basis-1/3">
+    <div className="flex flex-col items-center bg-primary basis-3/4 p-8 rounded-lg flex-grow shadow-sm
+      sm:basis-1/3
+      dark:bg-secondary">
       <h2 className="text-3xl">{level}</h2>
       {list.map((elem: any, i: number)=> <div key={i}>{elem}</div>)}
     </div>
@@ -62,9 +69,10 @@ const Skills = () => {
         exit={{opacity: 0}}
         id="skills"
         className="flex flex-col flex-grow
-        bg-primary
+        bg-secondary
         h-screen w-screen
-        pt-16"
+        pt-16 px-4
+        dark:bg-primary dark:text-white"
       >
         <h2 className="text-6xl flex justify-center mb-4">Skills</h2>
         <div className="flex flex-col justify-center gap-8
@@ -74,7 +82,6 @@ const Skills = () => {
       </m.div>
       </>
   );
-
 }
 
 export default Skills;

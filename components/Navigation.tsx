@@ -25,7 +25,8 @@ const Navigation = ({
       border-spacing-60 
       flex justify-between items-center gap-8
       h-16 w-screen
-      border-secondary border-solid rounded">
+      border-secondary border-solid rounded
+      dark:text-white">
       <h1>juscuzryancan</h1>
       <div className="flex gap-8">
         <Link 

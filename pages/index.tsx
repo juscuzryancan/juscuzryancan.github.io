@@ -25,7 +25,8 @@ const Home = ({darkMode}: HomeProps) => {
       >
         <div 
           className="flex flex-grow flex-col justify-around items-center bg-secondary gap-8 snap-center shadow shadow-primary
-          sm:flex-row sm:gap-8 sm:w-auto sm:p-8 "
+          sm:flex-row sm:gap-8 sm:w-auto sm:p-8 
+          dark:bg-primary dark:text-white"
           id="about"
         >
           <div className="flex flex-col gap-4 max-w-2xl">
