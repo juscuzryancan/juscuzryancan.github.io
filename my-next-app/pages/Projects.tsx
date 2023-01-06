@@ -79,11 +79,17 @@ const Projects = () => {
         <link rel="icon" href="/ryfav.PNG" />
       </Head>
       <m.div 
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
+        initial={{y: "100%"}}
+        animate={{y: "0%"}}
+        transition={{duration: 0.75, ease: "easeOut"}}
+        exit={{opacity: 0}}
         id="projects"
-        className="bg-secondary flex-grow mr-4 mt-4 mb-4 p-4 shadow-2xl shadow-tertiary/20 
-        sm:p-8 sm:mr-16 sm:mt-16 sm:mb-16"
+        className="absolute top-0 left-0 
+        pt-16
+        h-screen w-screen
+        bg-secondary 
+        flex-grow 
+        shadow-2xl shadow-tertiary/20"
       >
         <h2 className="flex justify-center text-4xl px-8">Projects</h2>
         <div className="flex flex-col flex-grow p-8 gap-4

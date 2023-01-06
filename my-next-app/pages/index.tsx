@@ -17,12 +17,14 @@ const Home = ({darkMode}: HomeProps) => {
         <link rel="icon" href="/ryfav.PNG" />
       </Head>
       <m.main
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
-        className="flex flex-col flex-grow h-full"
+        initial={{y: "100%"}}
+        animate={{y: "0%"}}
+        transition={{duration: 0.75, ease: "easeOut"}}
+        exit={{opacity: 0}}
+        className="absolute top-0 left-0 flex flex-col flex-grow h-screen w-screen"
       >
         <div 
-          className="flex flex-grow flex-col justify-around items-center bg-secondary gap-8 snap-center mb-16 mt-16 mr-16 shadow shadow-primary
+          className="flex flex-grow flex-col justify-around items-center bg-secondary gap-8 snap-center shadow shadow-primary
           sm:flex-row sm:gap-8 sm:w-auto sm:p-8 "
           id="about"
         >

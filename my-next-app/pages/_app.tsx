@@ -4,14 +4,14 @@ import Navigation from '../components/Navigation';
 import { AnimatePresence } from 'framer-motion';
 import { useState } from "react";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps, router }: AppProps) {
   const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <div className="flex items-center h-screen w-screen">
+    <div className="relative h-full w-full">
       <Navigation darkMode={darkMode} setDarkMode={setDarkMode}/>
       <AnimatePresence >
-        <Component {...pageProps} darkMode={darkMode} />
+        <Component key={router.pathname} {...pageProps} darkMode={darkMode} />
       </AnimatePresence>
     </div>
   )}

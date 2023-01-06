@@ -56,11 +56,15 @@ const Skills = () => {
         <link rel="icon" href="/ryfav.PNG" />
       </Head>
       <m.div 
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
+        initial={{y: "100%"}}
+        animate={{y: "0%"}}
+        transition={{duration: 0.75, ease: "easeOut"}}
+        exit={{opacity: 0}}
         id="skills"
         className="flex flex-col flex-grow
-        sm:pr-16 sm:pt-16 sm:pb-16"
+        bg-primary
+        h-screen w-screen
+        pt-16"
       >
         <h2 className="text-6xl flex justify-center mb-4">Skills</h2>
         <div className="flex flex-col justify-center gap-8
