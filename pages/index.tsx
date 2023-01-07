@@ -68,22 +68,13 @@ const Home = ({darkMode}: HomeProps) => {
             </div>
           </div>
           <div>
-            {flip 
-              ? <m.div
-                  initial={{opacity: 0}}
-                  animate={{opacity: 1}}
-                  exit={{opacity: 0}}
-                >
-                <Image className="rounded-md sm:max-w-xs" src={PFP} alt="Candid of me in a sketchy parking lot"/> 
-              </m.div>
-              : <m.div
-                  initial={{opacity: 0}}
-                  animate={{opacity: 1}}
-                  exit={{opacity: 0}}
-                >
-                <Image className="rounded-md sm:max-w-xs" src={running} alt="Running my half marathon in central park"/> 
-              </m.div>
-            }
+            <m.div
+              initial={{opacity: 0}}
+              animate={{opacity: 1}}
+              exit={{opacity: 0}}
+            >
+              <Image className="rounded-md sm:max-w-xs" src={PFP} alt="Candid of me in a sketchy parking lot"/> 
+            </m.div>
             <div className="flex justify-center my-4">
               "I will, therefore I am" - Ryan Riley Puzon
             </div> 
