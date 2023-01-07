@@ -66,7 +66,7 @@ const Skills = () => {
         initial={{y: "100%"}}
         animate={{y: "0%"}}
         transition={{duration: 0.75, ease: "easeOut"}}
-        exit={{opacity: 0}}
+        exit={{opacity: 1}}
         id="skills"
         className="flex flex-col flex-grow
         bg-secondary

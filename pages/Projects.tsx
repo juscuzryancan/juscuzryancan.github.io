@@ -82,7 +82,7 @@ const Projects = () => {
         initial={{y: "100%"}}
         animate={{y: "0%"}}
         transition={{duration: 0.75, ease: "easeOut"}}
-        exit={{opacity: 0}}
+        exit={{opacity: 1}}
         id="projects"
         className="absolute top-0 left-0 
         pt-16
