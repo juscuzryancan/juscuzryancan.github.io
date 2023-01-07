@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Head from 'next/head'
 import PFP from "../public/pfp.jpg";
-import running from "../public/running.JPG";
+import running from "../public/running.jpg";
 import Image from "next/image";
 import { motion as m } from "framer-motion";
 
