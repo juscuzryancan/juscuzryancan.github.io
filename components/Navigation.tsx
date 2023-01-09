@@ -21,27 +21,40 @@ const Navigation = ({
 
   return (
     <nav className="absolute z-10 
-      px-4
-      border-spacing-60 
-      flex justify-between items-center gap-8
+      p-4
+      flex justify-center items-center gap-8
       h-16 w-screen
-      border-secondary border-solid rounded
+      text-lg
+      sm:justify-end 
       dark:text-white">
-      <h1>juscuzryancan</h1>
       <div className="flex gap-8">
         <Link 
           href="/"
-          className={clsx(
-          )}
+          className="bg-primary 
+          px-2 py-1
+          shadow
+          border-primary border-solid border-2 rounded-full 
+          dark:bg-secondary dark:shadow-white"
         >About</Link>
         <Link 
+          className="bg-primary 
+          px-2 py-1
+          shadow
+          border-primary border-solid border-2 rounded-full 
+          dark:bg-secondary dark:shadow-white"
           href="/Skills"
         >Skills</Link>
-        <Link href="/Projects"
+        <Link 
+          className="bg-primary 
+          px-2 py-1
+          shadow
+          border-primary border-solid border-2 rounded-full 
+          dark:bg-secondary dark:shadow-white"
+          href="/Projects"
         >Projects</Link>
       <div
         className={clsx(
-          "flex border-solid border-tertiary border-2 rounded-full cursor-pointer w-[40px]",
+          "flex items-center w-[45px] border-solid border-tertiary border-2 rounded-full cursor-pointer ",
           darkMode ? "bg-indigo-800/90 justify-end" : "bg-yellow-400/90 justify-start"
         )}
         // data-darkmode={darkMode}
