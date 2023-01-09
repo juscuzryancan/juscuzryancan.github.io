@@ -49,11 +49,11 @@ const Home = ({darkMode}: HomeProps) => {
         className="absolute top-0 left-0 flex flex-col flex-grow h-screen w-screen"
       >
         <div 
-          className="flex flex-grow flex-col justify-around items-center gap-8
+          className="flex flex-grow flex-col justify-center items-center gap-8
           shadow shadow-primary
           bg-secondary
           pt-16
-          sm:flex-row sm:gap-8 sm:w-auto sm:p-8 sm:m-0
+          sm:flex-row sm:gap-32 sm:w-auto sm:p-8 sm:m-0
           dark:bg-primary dark:text-white"
           id="about"
         >
@@ -78,18 +78,12 @@ const Home = ({darkMode}: HomeProps) => {
             </div>
           </div>
           <div>
-            <m.div
-              initial={{opacity: 0}}
-              animate={{opacity: 1}}
-              exit={{opacity: 0}}
-            >
-              <Image 
-                className="rounded-xl p-4
-                sm:max-w-xs sm:p-0" 
-                src={PFP} 
-                alt="Candid of me in a sketchy parking lot"
-              /> 
-            </m.div>
+            <Image 
+              className="rounded-xl p-4
+              sm:max-w-xs sm:p-0" 
+              src={PFP} 
+              alt="Candid of me in a sketchy parking lot"
+            /> 
             <div className="flex justify-center my-4">
               "I will, therefore I am" - Ryan Riley Puzon
             </div> 
