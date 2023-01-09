@@ -52,6 +52,22 @@ const Navigation = ({
           dark:bg-secondary dark:shadow-white"
           href="/Projects"
         >Projects</Link>
+        <Link 
+          className="bg-primary 
+          px-5 py-1
+          shadow
+          border-primary border-solid border-2 rounded-full 
+          dark:bg-secondary dark:shadow-white"
+          href="/Art"
+        >Art</Link>
+        <Link 
+          className="bg-primary 
+          px-2 py-1
+          shadow
+          border-primary border-solid border-2 rounded-full 
+          dark:bg-secondary dark:shadow-white"
+          href="/Contacts"
+        >Contact Me</Link>
       <div
         className={clsx(
           "flex items-center w-[45px] border-solid border-tertiary border-2 rounded-full cursor-pointer ",
