@@ -1,22 +1,24 @@
 /** @type {import('next').NextConfig} */
 const isGithubActions = process.env.GITHUB_ACTIONS || false
-let assetPrefix = ''
-let basePath = ''
+
+let assetPrefix = '';
+let basePrefix = '';
+
 if (isGithubActions) {
   // trim off `<owner>/`
   const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
   assetPrefix = `/${repo}/`
-  basePath = `/${repo}`
+  basePrefix = `/${repo}`
 }
+
 
 const nextConfig = {
   reactStrictMode: true,
-  basePath: basePath,
-  assetPrefix
-  // images: {
-  //   loader: 'imgix',
-  //   path: 'https://juscuzryancan.imgix.net/',
-  // },
+  assetPrefix,
+  basePrefix,
+  images: {
+    unoptimized: true
+  },
 }
 
 module.exports = nextConfig
