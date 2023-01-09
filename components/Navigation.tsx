@@ -1,7 +1,8 @@
 import Link from "next/link";
+import { useState } from "react";
 import { BsFillMoonStarsFill } from "react-icons/bs";
+import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import { motion as m } from "framer-motion";
-import { useRouter } from "next/router";
 import clsx from "clsx";
 
 interface NavigationProps {
@@ -13,7 +14,7 @@ const Navigation = ({
   setDarkMode,
   darkMode
 }: NavigationProps) => {
-  const router = useRouter();
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode((darkMode:boolean) => !darkMode) 
@@ -27,7 +28,9 @@ const Navigation = ({
       text-lg
       sm:justify-end 
       dark:text-white">
-      <div className="flex gap-8">
+      
+      <div className="hidden 
+        sm:flex sm:gap-8">
         <Link 
           href="/"
           className="bg-primary 
@@ -68,26 +71,26 @@ const Navigation = ({
           dark:bg-secondary dark:shadow-white"
           href="/Contacts"
         >Contact Me</Link>
-      <div
-        className={clsx(
-          "flex items-center w-[45px] border-solid border-tertiary border-2 rounded-full cursor-pointer ",
-          darkMode ? "bg-indigo-800/90 justify-end" : "bg-yellow-400/90 justify-start"
-        )}
-        // data-darkmode={darkMode}
-        onClick={toggleDarkMode}
-      >
-        <m.div 
-          className="border-tertiary border-solid"
-          layout 
-          transition={{
-            type: "spring",
-            stiffness: 900,
-            damping: 30
-          }}
+        <div
+          className={clsx(
+            "flex items-center w-[45px] border-solid border-tertiary border-2 rounded-full cursor-pointer ",
+            darkMode ? "bg-indigo-800/90 justify-end" : "bg-yellow-400/90 justify-start"
+          )}
+          // data-darkmode={darkMode}
+          onClick={toggleDarkMode}
         >
-          <BsFillMoonStarsFill className="mx-1 my-1"/>
-        </m.div>
-      </div>
+          <m.div 
+            className="border-tertiary border-solid"
+            layout 
+            transition={{
+              type: "spring",
+              stiffness: 900,
+              damping: 30
+            }}
+          >
+            <BsFillMoonStarsFill className="mx-1 my-1"/>
+          </m.div>
+        </div>
       </div>
     </nav>
   );
