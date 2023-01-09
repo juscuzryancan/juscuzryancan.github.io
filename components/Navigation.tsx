@@ -114,7 +114,8 @@ const Navigation = ({
         )}
       </div>
       {toggleMenu &&
-        <div className="absolute p-4 bg-primary rounded-md shadow-lg shadow-white z-20 top-4 right-12 flex flex-col gap-4">
+        <div className="absolute p-4 bg-secondary rounded-md shadow-lg z-20 top-4 right-12 flex flex-col gap-4
+          dark:bg-primary dark:shadow-white">
           <Menu />
         </div>
       }
