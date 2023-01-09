@@ -43,8 +43,9 @@ const ProjectCard = ({
 }: any) => {
 
   return (
-    <div className="relative group basis-[400px] flex flex-wrap flex-col shadow-sm shadow-tertiary bg-primary w-60 text-slate-50
-      rounded-md"
+    <div className="relative group basis-4/5 flex flex-wrap flex-col shadow-sm shadow-tertiary bg-primary text-slate-50
+      rounded-md
+      sm:basis-1/5 sm:flex-grow sm:h-[350px]"
     >
       <a 
         className="h-full w-full"
@@ -96,7 +97,7 @@ const Projects = () => {
       >
         <h2 className="flex justify-center text-4xl px-8">Projects</h2>
         <div className="flex flex-col flex-grow items-center gap-4 
-          py-8
+          p-8
           sm:flex-row sm:items-start sm:px-4" id='projects'>
           {projectsArray.map((project, index) => <ProjectCard key={index} {...project}/>)}
         </div>
