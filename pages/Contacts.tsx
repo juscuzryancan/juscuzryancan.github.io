@@ -18,7 +18,8 @@ const Contacts = () => {
         transition={{duration: 0.75, ease: "easeOut"}}
         exit={{opacity: 1}}
         id="skills"
-        className="flex flex-col flex-grow
+        className="absolute top-0 left-0
+        flex flex-col flex-grow
         bg-secondary
         h-screen w-screen
         pt-16 px-4

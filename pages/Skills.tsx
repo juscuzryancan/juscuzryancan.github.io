@@ -1,58 +1,88 @@
 import Head from 'next/head';
 import { motion as m } from "framer-motion";
+import { 
+  SiJavascript, 
+  SiTypescript, 
+  SiJava, 
+  SiPython, 
+  SiReact, 
+  SiTailwindcss, 
+  SiHtml5, 
+  SiCss3, 
+  SiNodedotjs, 
+  SiExpress, 
+  SiPostgresql, 
+  SiGit,
+  SiHeroku,
+  SiAmazonaws,
+  SiPostman
+} from "react-icons/si";
 
+const languages = [
+  {name: "JavaScript", icon: <SiJavascript />}, 
+  {name: "TypeScript", icon: <SiTypescript />},
+  {name: "Java", icon: <SiJava />},
+  {name: "Python", icon: <SiPython />}, 
+];
 
-interface SkillProps {
-  level: string,
-  list: Array<string>
-}
+const frontend = [
+  {name: "HTML5", icon: <SiHtml5 />}, 
+  {name: "CSS3", icon: <SiCss3 />}, 
+  {name: "React", icon: <SiReact />}, 
+  {name: "Tailwind", icon: <SiTailwindcss />}, 
+];
 
-const skills = [
-  {
-    level: "Proficient",
-    list: [
-      "JavaScript",
-      "HTML5",
-      "CSS3",
-      "Node.js",
-      "React",
-      "Axios",
-      "Express",
-      "Git"
-    ]
-  },
-  {
-    level: "Knowledgable",
-    list: [
-      "Java",
-      "PostgreSQL"
-    ]
-  },
-  {
-    level: "Some Familiarity",
-    list: [
-      "Python",
-      "Bootstrap",
-      "Heroku"
-    ]
-  },
+const backend = [
+  {name: "Node.js", icon: <SiNodedotjs />}, 
+  {name: "Express", icon: <SiExpress />}, 
+  {name: "PostgreSQL", icon: <SiPostgresql />},
+];
+
+const tools_libraries = [
+  {name: "Git", icon: <SiGit/>}, 
+  {name: "Heroku", icon: <SiHeroku/>}, 
+  {name: "AWS", icon: <SiAmazonaws/>}, 
+  {name: "Postman", icon: <SiPostman/>}
 ];
 
 const Skill = ({
-  level,
-  list
-}: SkillProps) => {
+  skill: {
+    name,
+    icon
+  }
+}: any) => {
   return (
-    <div className="flex flex-col items-center bg-primary basis-3/4 p-8 rounded-lg flex-grow shadow-sm
-      sm:basis-1/3
-      dark:bg-secondary">
-      <h2 className="text-3xl">{level}</h2>
-      {list.map((elem: any, i: number)=> <div key={i}>{elem}</div>)}
+    <div className="flex gap-2 items-center basis-1/3
+      text-4xl">
+      <div>{name}</div>
+      <div>{icon}</div>
     </div>
   );
 }
 
-const Skills = () => {
+const SkillSection = ({
+  title,
+  skills,
+  darkMode
+}: any) => {
+  return (
+    <div className="my-4">
+      <h3 className="text-4xl">{title}</h3>
+      <hr 
+        className="mb-4"
+        style={darkMode 
+        ? {borderTop: "1px solid white", color: "white"}
+        : {borderTop: "1px solid black", background:"black", color: "black"}
+      }/>
+      <div className="flex flex-col flex-wrap h-full content-between
+        sm:flex-row">
+        {skills.map((skill: any, index: any) => <Skill skill={skill} key={index}/>)}
+      </div>
+    </div>
+  );
+}
+
+const Skills = ({darkMode}: {darkMode: boolean}) => {
 
   return (
     <>
@@ -70,14 +100,17 @@ const Skills = () => {
         id="skills"
         className="flex flex-col flex-grow
         bg-secondary
-        h-screen w-screen
+        w-screen min-h-screen
         pt-16 px-4
         dark:bg-primary dark:text-white"
       >
         <h2 className="text-6xl flex justify-center mb-4">Skills</h2>
-        <div className="flex flex-col justify-center gap-8
-          sm:gap-12 sm:flex-row sm:basis-1/4">
-          {skills.map((skill: any, i: number) => <Skill key={i} {...skill}/>)}
+        <div className="flex flex-col justify-center gap-4
+          sm:basis-1/4">
+          <SkillSection darkMode={darkMode} title={"Languages"} skills={languages}/>
+          <SkillSection darkMode={darkMode} title={"Frontend"} skills={frontend}/>
+          <SkillSection darkMode={darkMode} title={"Backend"} skills={backend}/>
+          <SkillSection darkMode={darkMode} title={"Tools & Libraries"} skills={tools_libraries}/>
         </div>
       </m.div>
       </>

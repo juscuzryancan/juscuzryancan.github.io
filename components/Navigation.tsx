@@ -40,9 +40,10 @@ const Menu = ({darkMode, toggleDarkMode} : any) => {
       >Projects</Link>
       <Link 
         className="bg-primary 
-        px-5 py-1
+        px-2 py-1 text-left
         shadow
         border-primary border-solid border-2 rounded-full 
+        sm:px-5
         dark:bg-secondary dark:shadow-white"
         href="/Art"
       >Art</Link>
