@@ -86,7 +86,7 @@ const Projects = () => {
         exit={{opacity: 1}}
         id="projects"
         className="absolute top-0 left-0 
-        pt-16
+        pt-20
         w-full
         flex flex-col
         bg-secondary 

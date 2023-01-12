@@ -14,47 +14,72 @@ const Menu = ({darkMode, toggleDarkMode} : any) => {
 
   return (
     <>
-      <Link 
-        href="/"
-        className="bg-primary 
-        px-2 py-1
-        shadow
-        border-primary border-solid border-2 rounded-full 
-        dark:bg-secondary dark:shadow-white"
-      >About</Link>
-      <Link 
-        className="bg-primary 
-        px-2 py-1
-        shadow
-        border-primary border-solid border-2 rounded-full 
-        dark:bg-secondary dark:shadow-white"
-        href="/Skills"
-      >Skills</Link>
-      <Link 
-        className="bg-primary 
-        px-2 py-1
-        shadow
-        border-primary border-solid border-2 rounded-full 
-        dark:bg-secondary dark:shadow-white"
-        href="/Projects"
-      >Projects</Link>
-      <Link 
-        className="bg-primary 
-        px-2 py-1 text-left
-        shadow
-        border-primary border-solid border-2 rounded-full 
-        sm:px-5
-        dark:bg-secondary dark:shadow-white"
-        href="/Art"
-      >Art</Link>
-      <Link 
-        className="bg-primary 
-        px-2 py-1
-        shadow
-        border-primary border-solid border-2 rounded-full 
-        dark:bg-secondary dark:shadow-white"
-        href="/Contacts"
-      >Contact Me</Link>
+      <m.div
+        className="flex items-center"
+        whileHover={{ scale:1.2 }}
+      >
+        <Link 
+          href="/"
+          className="bg-primary 
+          px-2 py-1
+          shadow
+          border-primary border-solid border-2 rounded-full 
+          dark:bg-secondary dark:shadow-white"
+        >About</Link>
+      </m.div>
+      <m.div
+        className="flex items-center"
+        whileHover={{ scale:1.2 }}
+      >
+        <Link 
+          className="bg-primary 
+          px-2 py-1
+          shadow
+          border-primary border-solid border-2 rounded-full 
+          dark:bg-secondary dark:shadow-white"
+          href="/Skills"
+        >Skills</Link>
+      </m.div>
+      <m.div
+        className="flex items-center"
+        whileHover={{ scale:1.2 }}
+      >
+        <Link 
+          className="bg-primary 
+          px-2 py-1
+          shadow
+          border-primary border-solid border-2 rounded-full 
+          dark:bg-secondary dark:shadow-white"
+          href="/Projects"
+        >Projects</Link>
+      </m.div>
+      <m.div
+        className="flex items-center"
+        whileHover={{ scale:1.2 }}
+      >
+        <Link 
+          className="bg-primary 
+          px-2 py-1 text-left
+          shadow
+          border-primary border-solid border-2 rounded-full 
+          sm:px-5
+          dark:bg-secondary dark:shadow-white"
+          href="/Art"
+        >Art</Link>
+      </m.div>
+      <m.div
+        className="flex items-center"
+        whileHover={{ scale:1.2 }}
+      >
+        <Link 
+          className="bg-primary 
+          px-2 py-1
+          shadow
+          border-primary border-solid border-2 rounded-full 
+          dark:bg-secondary dark:shadow-white"
+          href="/Contacts"
+        >Contact Me</Link>
+      </m.div>
       <div
         className={clsx(
           "hidden sm:flex items-center w-[45px] border-solid border-tertiary border-2 rounded-full cursor-pointer ",
@@ -90,9 +115,9 @@ const Navigation = ({
 
   return (
     <nav className="absolute z-10 
-      p-4
+      p-4 py-6
       flex justify-end items-center gap-8
-      h-16 w-screen
+      h-fit w-screen
       text-lg
       dark:text-white">
       <div className="hidden 

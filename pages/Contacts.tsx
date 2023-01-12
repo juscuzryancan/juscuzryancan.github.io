@@ -22,7 +22,7 @@ const Contacts = () => {
         flex flex-col flex-grow
         bg-secondary
         h-screen w-screen
-        pt-16 px-4
+        pt-20 px-4
         dark:bg-primary dark:text-white"
       >
         <footer className="flex flex-col p-8">

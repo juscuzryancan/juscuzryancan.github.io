@@ -101,7 +101,7 @@ const Skills = ({darkMode}: {darkMode: boolean}) => {
         className="flex flex-col flex-grow
         bg-secondary
         w-screen min-h-screen
-        pt-16 px-4
+        pt-20 px-4
         dark:bg-primary dark:text-white"
       >
         <h2 className="text-6xl flex justify-center mb-4">Skills</h2>

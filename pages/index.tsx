@@ -49,11 +49,12 @@ const Home = ({darkMode}: HomeProps) => {
         className="absolute top-0 left-0 flex flex-col flex-grow h-screen w-screen"
       >
         <div 
-          className="flex flex-grow flex-col justify-center items-center gap-8
+          className="flex flex-grow flex-col justify-center items-center gap-16
           shadow shadow-primary
           bg-secondary
-          pt-16
-          sm:flex-row sm:gap-32 sm:w-auto sm:p-8 sm:m-0
+          pt-20
+          sm:w-auto sm:px-8
+          md:flex-row
           dark:bg-primary dark:text-white"
           id="about"
         >
