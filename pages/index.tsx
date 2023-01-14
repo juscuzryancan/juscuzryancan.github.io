@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Head from 'next/head'
 import PFP from "../public/pfp.jpg";
 import Image from "next/image";
-import { motion as m } from "framer-motion";
+import { delay, motion as m } from "framer-motion";
 
 interface HomeProps {
   darkMode: boolean;
@@ -58,7 +58,11 @@ const Home = ({darkMode}: HomeProps) => {
           dark:bg-primary dark:text-white"
           id="about"
         >
-          <div className="flex flex-col gap-4 max-w-2xl">
+          <m.div 
+            transition={{delay: 0.5, duration: .75, ease: "easeOut"}}
+            initial={{x:"100%", opacity: 0}}
+            animate={{x:"0%", opacity: 1}}
+            className="flex flex-col gap-4 max-w-2xl">
             <h1 
               className="text-4xl flex justify-center
               sm:block"
@@ -77,7 +81,7 @@ const Home = ({darkMode}: HomeProps) => {
               Now, I want to be able to put my skills to the test and satisfy my everlasting need to know more about how systems within the industry work and the small cogs and gears that make them work. 
               In the future, I'd hope to teach everyone else my knowledge and help them within the path of becoming a developer themself.
             </div>
-          </div>
+          </m.div>
           <div>
             <Image 
               className="rounded-xl p-4
