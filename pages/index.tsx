@@ -84,6 +84,7 @@ const Home = ({darkMode}: HomeProps) => {
           </m.div>
           <div>
             <Image 
+              priority
               className="rounded-xl p-4
               sm:max-w-xs sm:p-0" 
               src={PFP} 
