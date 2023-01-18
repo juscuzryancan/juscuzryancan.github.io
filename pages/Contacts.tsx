@@ -1,6 +1,8 @@
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import Head from 'next/head';
+import Image from 'next/image';
 import { motion as m } from "framer-motion";
+import running from "../public/running.png";
 
 const Contacts = () => {
 
@@ -25,35 +27,40 @@ const Contacts = () => {
         pt-20 px-4
         dark:bg-primary dark:text-white"
       >
-        <footer className="flex flex-col p-8">
-          <div>
-            {/* <div>Ryan Riley Puzon</div> */}
-          </div>
-          <div className="snap-center">
-            <div className="p-8 snap-center" id="contacts">
-              <h2 className="flex justify-center text-3xl mb-4">Contacts</h2>
-              <div className="flex justify-center">
-                <div className="flex gap-4 justify-between">
-                  <a 
-                    href="https://github.com/juscuzryancan" 
-                    target="_blank" 
-                    rel="noreferrer"
-                  >
-                    <FaGithubSquare className="h-16 w-16"/>
-                  </a>
-                  <a 
-                    className=""
-                    href="https://www.linkedin.com/in/ryanrileypuzon/" 
-                    target="_blank" 
-                    rel="noreferrer"
-                  >
-                    <FaLinkedin className="h-16 w-16"/>
-                  </a>
-                </div>
+        <div className="snap-center">
+          <div className="p-8 snap-center" id="contacts">
+            <h2 className="flex justify-center text-3xl mb-4">Contacts</h2>
+            <div className="flex justify-center">
+              <div
+                className="h-1/4"
+              >
+                <Image 
+                  className="max-h-full"
+                  priority
+                  alt="Finishing the big apple half marathon"
+                  src={running}
+                />
+              </div>
+              <div className="flex gap-4">
+                <a 
+                  href="https://github.com/juscuzryancan" 
+                  target="_blank" 
+                  rel="noreferrer"
+                >
+                  <FaGithubSquare className="h-16 w-16"/>
+                </a>
+                <a 
+                  className=""
+                  href="https://www.linkedin.com/in/ryanrileypuzon/" 
+                  target="_blank" 
+                  rel="noreferrer"
+                >
+                  <FaLinkedin className="h-16 w-16"/>
+                </a>
               </div>
             </div>
           </div>
-        </footer>
+        </div>
       </m.div>
       </>
   );

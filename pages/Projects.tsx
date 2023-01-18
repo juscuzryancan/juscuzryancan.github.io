@@ -7,6 +7,7 @@ import virtualTraders from "../public/virtual_traders.png";
 import Image from "next/image";
 import Head from "next/head";
 import { motion as m } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
 
 const projectsArray = [
   {
@@ -43,9 +44,9 @@ const ProjectCard = ({
 }: any) => {
 
   return (
-    <div className="relative group basis-4/5 flex flex-wrap flex-col shadow-sm shadow-tertiary bg-primary text-slate-50
+    <div className="relative group flex flex-wrap flex-col shadow-sm shadow-tertiary bg-primary text-slate-50
       rounded-md
-      sm:basis-1/5 sm:h-[350px]"
+      sm:basis-1/3 sm:min-w-[30%] sm:h-full sm:mx-4"
     >
       <a 
         className="h-full w-full"
@@ -70,6 +71,12 @@ const ProjectCard = ({
 }
 
 const Projects = () => {
+  const [width, setWidth] = useState(0);
+  const slider: any = useRef();
+
+  useEffect(() => {
+    setWidth(slider.current.scrollWidth - slider.current.offsetWidth);
+  }, []);
 
   return (
     <>
@@ -95,11 +102,20 @@ const Projects = () => {
         sm:h-screen sm:w-screen"
       >
         <h2 className="flex justify-center text-4xl px-8">Projects</h2>
-        <div className="flex flex-col flex-wrap flex-grow-0 items-center gap-4 
+        <m.div 
+          ref={slider}
+          whileTap={{cursor: "grabbing"}}
+          className="flex flex-col flex-wrap flex-grow items-center gap-4 
           p-8 
           sm:flex-row sm:items-start sm:px-4" id='projects'>
+          <m.div
+            className="flex flex-grow h-full"
+            drag="x"
+            dragConstraints={{right: 0, left: -width}}
+          >
           {projectsArray.map((project, index) => <ProjectCard key={index} {...project}/>)}
-        </div>
+          </m.div>
+        </m.div>
       </m.div>
     </>
   );
