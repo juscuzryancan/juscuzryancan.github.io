@@ -32,10 +32,10 @@ const Contacts = () => {
             <h2 className="flex justify-center text-3xl mb-4">Contacts</h2>
             <div className="flex justify-center">
               <div
-                className="h-1/4"
+                className="w-96 rounded"
               >
                 <Image 
-                  className="max-h-full"
+                  className="max-h-full rounded"
                   priority
                   alt="Finishing the big apple half marathon"
                   src={running}

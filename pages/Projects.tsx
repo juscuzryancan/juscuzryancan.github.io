@@ -106,10 +106,9 @@ const Projects = () => {
           ref={slider}
           whileTap={{cursor: "grabbing"}}
           className="flex flex-col flex-wrap flex-grow items-center gap-4 
-          p-8 
-          sm:flex-row sm:items-start sm:px-4" id='projects'>
+          sm:flex-row sm:items-start" id='projects'>
           <m.div
-            className="flex flex-grow h-full"
+            className="flex flex-grow h-full m-bottom w-screen"
             drag="x"
             dragConstraints={{right: 0, left: -width}}
           >
