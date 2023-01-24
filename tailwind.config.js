@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        redHatDisplay: "Red Hat Display"
+      },
       colors: {
         primary: "#546A76",
         secondary: "#88A0A8",
