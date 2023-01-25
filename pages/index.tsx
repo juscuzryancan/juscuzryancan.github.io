@@ -102,6 +102,7 @@ const Home = () => {
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
+        <title>Ryan Riley Puzon</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="title" content="Ryan Riley Puzon" />
         <meta name="description" content="Software Engineer Personal Portfolio" />
