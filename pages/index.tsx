@@ -94,18 +94,10 @@ const skills: any = {
 const Home = () => {
 
   const [darkMode, setDarkMode] = useState(false);
-  const [flip, setFlip] = useState(true);
 
   const toggleDarkMode = () => {
     setDarkMode((darkMode:boolean) => !darkMode) 
   };
-
-  useEffect(()=> {
-    const interval = setInterval(() => {
-      setFlip(!flip);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [])
 
   return (
     <div className={darkMode ? "dark" : ""}>
