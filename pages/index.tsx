@@ -121,10 +121,11 @@ const Home = () => {
         <meta property="twitter:image" content="https://juscuzryancan.github.io/_next/static/media/pfp.6427a436.jpg" />
         <link rel="icon" href="/ryfav.PNG" />
       </Head>
-      <main className="bg-white px-10 
-        md:px-20 
-        lg:px-40
-        dark:bg-primary dark:text-white">
+      <main className={clsx(darkMode && "dark",
+        "bg-white px-10",
+        "md:px-20",
+        "lg:px-40",
+        "dark:bg-primary dark:text-white")}>
         <section className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between">
             <h1 className="text-xl font-redHatDisplay">juscuzryancan</h1>
@@ -217,16 +218,16 @@ const Home = () => {
             {/* </p> */}
           </div>
           <div className="lg:flex gap-2">
-            {Object.keys(skills).map((key: string) => {
+            {Object.keys(skills).map((key: string, i: number) => {
               return (
-                <div className="flex flex-col flex-1 items-center shadow-lg p-10 rounded-xl my-10">
+                <div key={i} className="flex flex-col flex-1 items-center shadow-lg p-10 rounded-xl my-10">
                   {/* <Image alt="hello" src={}/> */}
                   <h3 className="text-lg text-tertiary font-medium pt-8 pb-2 dark:text-four">{key}</h3>
                   {/* <p className="py-2">insane digintin with theory f ofr  your need design theory.</p> */}
                   {/* <h4 className="py-4 text-teal-600">Desig tools i u se</h4> */}
-                  {skills[key].map((skill: any) => {
+                  {skills[key].map((skill: any, i: number) => {
                     return (
-                      <div className="flex gap-2 items-center">
+                      <div key={i} className="flex gap-2 items-center">
                         <p className="text-gray-800 py-1 dark:text-white">{skill.name}</p>
                         <p className="text-gray-800 py-1 dark:text-white">{skill.icon}</p>
                       </div>
@@ -289,7 +290,7 @@ const Home = () => {
           </div>
         </section>
       </main>     
-    </div>
+      </div>
   )
 }
 
