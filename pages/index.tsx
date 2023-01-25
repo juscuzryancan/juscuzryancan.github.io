@@ -254,8 +254,8 @@ const Home = () => {
           <div className="flex flex-col gap-10 py-10
             lg:flex-row lg:flex-wrap">
 
-            {projects.map(({link, title, description, img}: any) => {
-              return <div className="relative group basis-1/3 flex-1 flex flex-wrap flex-col shadow-sm shadow-tertiary bg-primary text-slate-50
+            {projects.map(({link, title, description, img}: any, i: number) => {
+              return <div key={i} className="relative group basis-1/3 flex-1 flex flex-wrap flex-col shadow-sm shadow-tertiary bg-primary text-slate-50
                 rounded-md
                 sm:basis-1/5 sm:h-[350px]"
               >
