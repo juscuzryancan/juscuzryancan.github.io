@@ -153,7 +153,12 @@ const Home = () => {
                 </div>
               </li>
               <li>
-                <a className="bg-gradient-to-r from-secondary to-tertiary text-white px-4 py-2 rounded-md ml-8" href="#">Click Me!</a>
+                <a 
+                  className="bg-gradient-to-r from-secondary to-tertiary text-white px-4 py-2 rounded-md ml-8" 
+                  href="https://editor.p5js.org/rpuzon01/sketches/OJ4lsZGjo"
+                  target="_blank"
+                  rel="noreferrer"
+                >Click Me!</a>
               </li>
             </ul>
           </nav>
