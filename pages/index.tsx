@@ -32,13 +32,13 @@ import virtualTraders from "../public/virtual_traders.png";
 const projects = [
   {
     title: "Virtual Traders",
-    link: "https://virtual-velocity-production.up.railway.app/" ,
+    link: "https://virtual-trader-44d67a97b643.herokuapp.com/",
     description: "Fullstack Ecommerce Website For Selling Trading Cards",
     img: virtualTraders
   },
   {
     title: "Fitness Trackr",
-    link: "https://fitnesstrac-kr.onrender.com/" ,
+    link: "https://lit-tor-21021-b8c9417056cb.herokuapp.com/",
     description: "Fullstack Website For Sharing Workouts",
     img: fitnessTracker
   },
