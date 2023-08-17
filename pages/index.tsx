@@ -277,7 +277,7 @@ const Home = () => {
                     group-hover:flex"
                   >
                     <h4 className="z-20">{title}</h4>
-                    <p className="z-20">
+                    <p className="text-center z-20">
                       {description}
                     </p>
                   </div>
