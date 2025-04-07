@@ -1,0 +1,12 @@
+export const NAME = "Ryan Riley Puzon";
+export const EMAIL = "rrgpuzon@gmail.com";
+export const PHONE = "(669) 232-7435";
+export const LINKEDIN = "https://www.linkedin.com/in/ryanrileypuzon";
+export const GITHUB = "https://github.com/juscuzryancan";
+export const TWITTER = "https://twitter.com/juscuzryancan";
+export const INSTAGRAM = "https://www.instagram.com/juscuzryancan";
+export const TIKTOK = "https://www.tiktok.com/@juscuzryancan";
+export const YOUTUBE = "https://www.youtube.com/@juscuzryancan";
+export const FACEBOOK = "https://www.facebook.com/juscuzryancan";
+export const PINTEREST = "https://www.pinterest.com/juscuzryancan";
+export const REDDIT = "https://www.reddit.com/user/juscuzryancan";
