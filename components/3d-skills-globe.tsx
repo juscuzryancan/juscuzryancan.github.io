@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card"
 import { Loader2, AlertTriangle } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useIsClient } from "@/hooks/use-is-client"
+import * as THREE from 'three';
 
 // Skills data for the globe
 const skills = [
