@@ -77,7 +77,7 @@ export default function SkillsGlobe() {
 
         if (!THREE) return
 
-        const { OrbitControls } = await import("three/examples/jsm/controls/OrbitControls").catch((err) => {
+        const { OrbitControls } = await import("three/examples/jsm/controls/OrbitControls.js").catch((err) => {
           console.error("Failed to load OrbitControls:", err)
           setIsError(true)
           setIsLoading(false)
