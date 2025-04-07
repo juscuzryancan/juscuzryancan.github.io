@@ -40,7 +40,7 @@ export function LazyImage({
     setError(false)
 
     // Check if image is cached
-    const img = new Image()
+    const img = new window.Image()
     img.src = src as string
 
     // If the image is complete immediately, it's likely cached
