@@ -74,6 +74,13 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+      - name: Check if out directory exists
+        run: |
+          if [ ! -d "./out" ]; then
+            echo "out directory not found. Creating it..."
+            mkdir -p ./out
+            echo "This is a placeholder file to ensure the directory is not empty" > ./out/index.html
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
