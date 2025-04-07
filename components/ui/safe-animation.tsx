@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useEffect, useRef } from "react"
-import { motion, type MotionProps } from "framer-motion"
+import { motion, type MotionProps, type HTMLMotionProps } from "framer-motion"
 import { useIsClient } from "@/hooks/use-is-client"
 
 interface SafeAnimationProps extends MotionProps {
@@ -94,7 +94,7 @@ export function SafeAnimation({
   const MotionComponent = motion[as as keyof typeof motion] || motion.div
 
   return (
-    <MotionComponent className={className} {...motionProps}>
+    <MotionComponent className={className} {...(motionProps as HTMLMotionProps<typeof as>)}>
       {children}
     </MotionComponent>
   )
