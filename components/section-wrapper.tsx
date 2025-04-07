@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { useInView } from "framer-motion"
 import { useProgressiveLoading } from "@/components/progressive-loading-provider"
 import { cn } from "@/lib/utils"
@@ -23,7 +23,7 @@ export function SectionWrapper({
   priority = 5,
 }: SectionWrapperProps) {
   const { loadedSections, setLoaded } = useProgressiveLoading()
-  const [ref, setRef] = useState<HTMLDivElement | null>(null)
+  const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
   const [shouldRender, setShouldRender] = useState(false)
 
@@ -59,7 +59,7 @@ export function SectionWrapper({
   }, [shouldRender, sectionName, setLoaded, loadedSections])
 
   return (
-    <div ref={setRef} className={cn(className)}>
+    <div ref={ref} className={cn(className)}>
       {shouldRender ? children : skeletonComponent}
     </div>
   )
