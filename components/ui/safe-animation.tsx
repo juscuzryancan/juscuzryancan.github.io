@@ -1,14 +1,12 @@
 "use client"
 
-import type React from "react"
-
-import { useState, useEffect, useRef } from "react"
-import { motion, type MotionProps, type HTMLMotionProps } from "framer-motion"
+import React, { useState, useEffect, useRef } from "react"
+import { HTMLMotionProps, motion, type MotionProps } from "framer-motion"
 import { useIsClient } from "@/hooks/use-is-client"
 
 interface SafeAnimationProps extends MotionProps {
   children: React.ReactNode
-  as?: React.ElementType
+  as?: string
   disableOnLowFPS?: boolean
   disableOnMobile?: boolean
   className?: string
@@ -86,17 +84,14 @@ export function SafeAnimation({
 
   // If not client-side or animations should be disabled, render without animation
   if (!isClient || !shouldAnimate) {
-    const Component = as
-    return <Component className={className}>{children}</Component>
+    return React.createElement(as, { className }, children)
   }
 
   // Otherwise, render with animations
-  const MotionComponent = motion[as as keyof typeof motion] || motion.div
-
   return (
-    <MotionComponent className={className} {...(motionProps as HTMLMotionProps<typeof as>)}>
+    <motion.div className={className} {...motionProps}>
       {children}
-    </MotionComponent>
+    </motion.div>
   )
 }
 
