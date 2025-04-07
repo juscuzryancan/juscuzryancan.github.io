@@ -43,6 +43,6 @@ export function useIntersectionObserver<T extends HTMLElement = HTMLDivElement>(
     }
   }, [rootMargin, threshold, once])
 
-  return [ref, isIntersecting]
+  return [ref as RefObject<T>, isIntersecting]
 }
 
