@@ -1,12 +1,13 @@
 "use client"
 
 import { useRef, useEffect, useState } from "react"
-import { motion } from "framer-motion"
+import { motion, type HTMLMotionProps } from "framer-motion"
 import { Card } from "@/components/ui/card"
 import { Loader2, AlertTriangle } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useIsClient } from "@/hooks/use-is-client"
 import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 // Skills data for the globe
 const skills = [
