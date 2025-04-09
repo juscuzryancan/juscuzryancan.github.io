@@ -42,18 +42,6 @@ const SkillsGlobe = dynamic(() => import("@/components/3d-skills-globe"), {
 // Skill categories with icons
 const skillCategories = [
   {
-    id: "ml-ai",
-    name: "Machine Learning & AI",
-    icon: <Laptop className="h-5 w-5" />,
-    color: "from-blue-500 to-indigo-500",
-  },
-  {
-    id: "audio",
-    name: "Audio & Voice Tech",
-    icon: <Zap className="h-5 w-5" />,
-    color: "from-purple-500 to-violet-500",
-  },
-  {
     id: "programming",
     name: "Programming",
     icon: <Code className="h-5 w-5" />,
@@ -61,45 +49,9 @@ const skillCategories = [
   },
   {
     id: "frameworks",
-    name: "AI Frameworks",
+    name: "Frameworks",
     icon: <Cpu className="h-5 w-5" />,
     color: "from-purple-500 to-violet-500",
-  },
-  {
-    id: "data",
-    name: "Data Science",
-    icon: <Database className="h-5 w-5" />,
-    color: "from-amber-500 to-yellow-500",
-  },
-  {
-    id: "network",
-    name: "Network Analysis",
-    icon: <Globe className="h-5 w-5" />,
-    color: "from-cyan-500 to-blue-500",
-  },
-  {
-    id: "cloud",
-    name: "Cloud & DevOps",
-    icon: <Cloud className="h-5 w-5" />,
-    color: "from-sky-500 to-blue-500",
-  },
-  {
-    id: "chatbots",
-    name: "Chatbots & AI",
-    icon: <MessageSquare className="h-5 w-5" />,
-    color: "from-green-500 to-emerald-500",
-  },
-  {
-    id: "security",
-    name: "Cybersecurity",
-    icon: <Shield className="h-5 w-5" />,
-    color: "from-red-500 to-rose-500",
-  },
-  {
-    id: "research",
-    name: "Research",
-    icon: <BookOpen className="h-5 w-5" />,
-    color: "from-rose-500 to-pink-500",
   },
   {
     id: "tools",
@@ -107,165 +59,214 @@ const skillCategories = [
     icon: <Tool className="h-5 w-5" />,
     color: "from-orange-500 to-amber-500",
   },
+  // {
+  //   id: "ml-ai",
+  //   name: "Machine Learning & AI",
+  //   icon: <Laptop className="h-5 w-5" />,
+  //   color: "from-blue-500 to-indigo-500",
+  // },
+  // {
+  //   id: "audio",
+  //   name: "Audio & Voice Tech",
+  //   icon: <Zap className="h-5 w-5" />,
+  //   color: "from-purple-500 to-violet-500",
+  // },
+  // {
+  //   id: "data",
+  //   name: "Data Science",
+  //   icon: <Database className="h-5 w-5" />,
+  //   color: "from-amber-500 to-yellow-500",
+  // },
+  // {
+  //   id: "network",
+  //   name: "Network Analysis",
+  //   icon: <Globe className="h-5 w-5" />,
+  //   color: "from-cyan-500 to-blue-500",
+  // },
   {
-    id: "transferable",
-    name: "Transferable Skills",
-    icon: <Briefcase className="h-5 w-5" />,
-    color: "from-indigo-500 to-blue-500",
+    id: "cloud",
+    name: "Cloud & DevOps",
+    icon: <Cloud className="h-5 w-5" />,
+    color: "from-sky-500 to-blue-500",
   },
-  {
-    id: "math",
-    name: "Mathematics",
-    icon: <Microscope className="h-5 w-5" />,
-    color: "from-cyan-500 to-teal-500",
-  },
+  // {
+  //   id: "chatbots",
+  //   name: "Chatbots & AI",
+  //   icon: <MessageSquare className="h-5 w-5" />,
+  //   color: "from-green-500 to-emerald-500",
+  // },
+  // {
+  //   id: "security",
+  //   name: "Cybersecurity",
+  //   icon: <Shield className="h-5 w-5" />,
+  //   color: "from-red-500 to-rose-500",
+  // },
+  // {
+  //   id: "research",
+  //   name: "Research",
+  //   icon: <BookOpen className="h-5 w-5" />,
+  //   color: "from-rose-500 to-pink-500",
+  // },
+  // {
+  //   id: "transferable",
+  //   name: "Transferable Skills",
+  //   icon: <Briefcase className="h-5 w-5" />,
+  //   color: "from-indigo-500 to-blue-500",
+  // },
+  // {
+  //   id: "math",
+  //   name: "Mathematics",
+  //   icon: <Microscope className="h-5 w-5" />,
+  //   color: "from-cyan-500 to-teal-500",
+  // },
 ]
 
 // Skill data
 const skillsData = {
-  "ml-ai": [
-    { name: "Deep Learning", level: 90 },
-    { name: "NLP", level: 85 },
-    { name: "Computer Vision", level: 85 },
-    { name: "Reinforcement Learning", level: 80 },
-    { name: "MLOps", level: 75 },
-    { name: "Generative AI", level: 90 },
-    { name: "Voice Cloning", level: 85 },
-    { name: "GANs", level: 90 },
-    { name: "Transformers", level: 85 },
-    { name: "Object Detection", level: 80 },
-  ],
-  audio: [
-    { name: "Real-time Voice Cloning", level: 90 },
-    { name: "One-Shot Voice Cloning", level: 85 },
-    { name: "TensorFlow TTS", level: 90 },
-    { name: "Speaker Diarization", level: 85 },
-    { name: "Whisper Transcription", level: 90 },
-    { name: "Audio Processing", level: 85 },
-    { name: "Audiobook Generation", level: 80 },
-    { name: "Real-time Audio Adjustments", level: 75 },
+  frameworks: [
+    { name: "React", level: 90 },
+    { name: "Node.js", level: 85 },
+    { name: "Spring Boot", level: 80 },
+    // { name: "PyTorch", level: 90 },
+    // { name: "TensorFlow", level: 85 },
+    // { name: "Scikit-learn", level: 95 },
+    // { name: "Hugging Face", level: 90 },
+    // { name: "CUDA", level: 75 },
+    // { name: "TensorRT", level: 65 },
+    // { name: "MLflow", level: 70 },
+    // { name: "Flask", level: 85 },
+    // { name: "Django", level: 80 },
   ],
   programming: [
-    { name: "Python", level: 95 },
     { name: "JavaScript/TypeScript", level: 90 },
-    { name: "C++", level: 75 },
-    { name: "SQL", level: 80 },
-    { name: "R", level: 60 },
-    { name: "MATLAB", level: 50 },
-    { name: "Julia", level: 55 },
-    { name: "Go", level: 65 },
-    { name: "Java", level: 70 },
-  ],
-  frameworks: [
-    { name: "PyTorch", level: 90 },
-    { name: "TensorFlow", level: 85 },
-    { name: "Scikit-learn", level: 95 },
-    { name: "Hugging Face", level: 90 },
-    { name: "CUDA", level: 75 },
-    { name: "TensorRT", level: 65 },
-    { name: "MLflow", level: 70 },
-    { name: "React", level: 80 },
-    { name: "Node.js", level: 75 },
-    { name: "Flask", level: 85 },
-    { name: "Django", level: 80 },
-  ],
-  data: [
-    { name: "Data Mining", level: 85 },
-    { name: "Business Intelligence", level: 70 },
-    { name: "Big Data Processing", level: 80 },
-    { name: "Pandas", level: 95 },
-    { name: "Tableau", level: 70 },
-    { name: "Data Visualization", level: 85 },
-    { name: "Predictive Modeling", level: 90 },
-    { name: "Text Analysis", level: 85 },
-    { name: "Sentiment Analysis", level: 80 },
-    { name: "Social Media Analysis", level: 75 },
-  ],
-  network: [
-    { name: "Social Network Analysis", level: 85 },
-    { name: "Graph Analytics", level: 80 },
-    { name: "Community Detection", level: 75 },
-    { name: "Network Visualization", level: 80 },
-    { name: "Friend Recommendation Systems", level: 85 },
-    { name: "Topic Connection Analysis", level: 80 },
-    { name: "NetworkX", level: 90 },
-  ],
-  cloud: [
-    { name: "AWS", level: 85 },
-    { name: "GCP", level: 75 },
-    { name: "Docker", level: 90 },
-    { name: "Kubernetes", level: 85 },
-    { name: "CI/CD", level: 80 },
-    { name: "Microservices", level: 75 },
-    { name: "DevOps", level: 80 },
-    { name: "Terraform", level: 70 },
-    { name: "Jenkins", level: 65 },
-    { name: "AWS Lambda", level: 85 },
-  ],
-  chatbots: [
-    { name: "Emotion-Aware Chatbots", level: 85 },
-    { name: "NLP Integration", level: 90 },
-    { name: "Conversational AI", level: 85 },
-    { name: "Rule-Based Systems", level: 80 },
-    { name: "Sentiment Tracking", level: 85 },
-    { name: "Topic Tracking", level: 80 },
-    { name: "Customer Service Automation", level: 75 },
-  ],
-  security: [
-    { name: "Vulnerability Detection", level: 80 },
-    { name: "IoT Security", level: 75 },
-    { name: "ML for Cybersecurity", level: 85 },
-    { name: "Ethical Hacking", level: 70 },
-    { name: "Security Tools Development", level: 80 },
-    { name: "RF Security", level: 65 },
-    { name: "Web Security", level: 75 },
-  ],
-  research: [
-    { name: "Grant Writing", level: 75 },
-    { name: "Peer Review", level: 80 },
-    { name: "Research Methods", level: 90 },
-    { name: "Experimental Design", level: 85 },
-    { name: "Scientific Writing", level: 90 },
-    { name: "Literature Review", level: 85 },
-    { name: "Academic Publishing", level: 75 },
+    { name: "Java", level: 85 },
+    { name: "Python", level: 50 },
+    { name: "Go", level: 30 },
+    // { name: "C++", level: 75 },
+    // { name: "SQL", level: 80 },
+    // { name: "R", level: 60 },
+    // { name: "MATLAB", level: 50 },
+    // { name: "Julia", level: 55 },
   ],
   tools: [
-    { name: "Git/GitHub", level: 95 },
-    { name: "Linux/Unix", level: 85 },
-    { name: "SolidWorks", level: 60 },
-    { name: "AutoCAD", level: 55 },
-    { name: "Arduino", level: 70 },
-    { name: "Raspberry Pi", level: 75 },
-    { name: "Jupyter Notebooks", level: 95 },
+    { name: "Neovim", level: 90 },
     { name: "VS Code", level: 90 },
-    { name: "Scrapy", level: 85 },
-    { name: "Selenium", level: 80 },
+    { name: "Git/GitHub", level: 95 },
+    { name: "Adobe Analytics", level: 80 },
+    // { name: "Arduino", level: 70 },
+    // { name: "Raspberry Pi", level: 75 },
+    // { name: "Jupyter Notebooks", level: 95 },
+    // { name: "Scrapy", level: 85 },
+    // { name: "Selenium", level: 80 },
   ],
+  // "ml-ai": [
+  //   { name: "Deep Learning", level: 90 },
+  //   { name: "NLP", level: 85 },
+  //   { name: "Computer Vision", level: 85 },
+  //   { name: "Reinforcement Learning", level: 80 },
+  //   { name: "MLOps", level: 75 },
+  //   { name: "Generative AI", level: 90 },
+  //   { name: "Voice Cloning", level: 85 },
+  //   { name: "GANs", level: 90 },
+  //   { name: "Transformers", level: 85 },
+  //   { name: "Object Detection", level: 80 },
+  // ],
+  // audio: [
+  //   { name: "Real-time Voice Cloning", level: 90 },
+  //   { name: "One-Shot Voice Cloning", level: 85 },
+  //   { name: "TensorFlow TTS", level: 90 },
+  //   { name: "Speaker Diarization", level: 85 },
+  //   { name: "Whisper Transcription", level: 90 },
+  //   { name: "Audio Processing", level: 85 },
+  //   { name: "Audiobook Generation", level: 80 },
+  //   { name: "Real-time Audio Adjustments", level: 75 },
+  // ],
+  // data: [
+  //   { name: "Data Mining", level: 85 },
+  //   { name: "Business Intelligence", level: 70 },
+  //   { name: "Big Data Processing", level: 80 },
+  //   { name: "Pandas", level: 95 },
+  //   { name: "Tableau", level: 70 },
+  //   { name: "Data Visualization", level: 85 },
+  //   { name: "Predictive Modeling", level: 90 },
+  //   { name: "Text Analysis", level: 85 },
+  //   { name: "Sentiment Analysis", level: 80 },
+  //   { name: "Social Media Analysis", level: 75 },
+  // ],
+  // network: [
+  //   { name: "Social Network Analysis", level: 85 },
+  //   { name: "Graph Analytics", level: 80 },
+  //   { name: "Community Detection", level: 75 },
+  //   { name: "Network Visualization", level: 80 },
+  //   { name: "Friend Recommendation Systems", level: 85 },
+  //   { name: "Topic Connection Analysis", level: 80 },
+  //   { name: "NetworkX", level: 90 },
+  // ],
+  cloud: [
+    { name: "AWS", level: 75 },
+    { name: "Github Actions", level: 40 },
+  //   { name: "GCP", level: 75 },
+  //   { name: "Docker", level: 90 },
+  //   { name: "Kubernetes", level: 85 },
+  //   { name: "CI/CD", level: 80 },
+  //   { name: "Microservices", level: 75 },
+  //   { name: "DevOps", level: 80 },
+  //   { name: "Terraform", level: 70 },
+  //   { name: "Jenkins", level: 65 },
+  //   { name: "AWS Lambda", level: 85 },
+  ],
+  // chatbots: [
+  //   { name: "Emotion-Aware Chatbots", level: 85 },
+  //   { name: "NLP Integration", level: 90 },
+  //   { name: "Conversational AI", level: 85 },
+  //   { name: "Rule-Based Systems", level: 80 },
+  //   { name: "Sentiment Tracking", level: 85 },
+  //   { name: "Topic Tracking", level: 80 },
+  //   { name: "Customer Service Automation", level: 75 },
+  // ],
+  // security: [
+  //   { name: "Vulnerability Detection", level: 80 },
+  //   { name: "IoT Security", level: 75 },
+  //   { name: "ML for Cybersecurity", level: 85 },
+  //   { name: "Ethical Hacking", level: 70 },
+  //   { name: "Security Tools Development", level: 80 },
+  //   { name: "RF Security", level: 65 },
+  //   { name: "Web Security", level: 75 },
+  // ],
+  // research: [
+  //   { name: "Grant Writing", level: 75 },
+  //   { name: "Peer Review", level: 80 },
+  //   { name: "Research Methods", level: 90 },
+  //   { name: "Experimental Design", level: 85 },
+  //   { name: "Scientific Writing", level: 90 },
+  //   { name: "Literature Review", level: 85 },
+  //   { name: "Academic Publishing", level: 75 },
+  // ],
   transferable: [
-    { name: "Project Management", level: 90 },
-    { name: "Technical Documentation", level: 85 },
-    { name: "Data-Driven Decision Making", level: 90 },
-    { name: "Innovation & Problem-Solving", level: 95 },
-    { name: "Collaboration", level: 90 },
-    { name: "Communication", level: 85 },
-    { name: "Leadership", level: 90 },
-    { name: "Time Management", level: 85 },
+  //   { name: "Project Management", level: 90 },
+  //   { name: "Technical Documentation", level: 85 },
+  //   { name: "Data-Driven Decision Making", level: 90 },
+  //   { name: "Innovation & Problem-Solving", level: 95 },
+  //   { name: "Collaboration", level: 90 },
+  //   { name: "Communication", level: 85 },
+  //   { name: "Leadership", level: 90 },
+  //   { name: "Time Management", level: 85 },
   ],
-  math: [
-    { name: "Linear Algebra", level: 95 },
-    { name: "Differential Equations", level: 90 },
-    { name: "Complex Analysis", level: 80 },
-    { name: "Group Theory", level: 75 },
-    { name: "Quantum Mechanics", level: 85 },
-    { name: "Statistical Mechanics", level: 85 },
-    { name: "Mathematical Physics", level: 80 },
-    { name: "Statistics", level: 90 },
-    { name: "Probability Theory", level: 85 },
-  ],
+  // math: [
+  //   { name: "Linear Algebra", level: 95 },
+  //   { name: "Differential Equations", level: 90 },
+  //   { name: "Complex Analysis", level: 80 },
+  //   { name: "Group Theory", level: 75 },
+  //   { name: "Quantum Mechanics", level: 85 },
+  //   { name: "Statistical Mechanics", level: 85 },
+  //   { name: "Mathematical Physics", level: 80 },
+  //   { name: "Statistics", level: 90 },
+  //   { name: "Probability Theory", level: 85 },
+  // ],
 }
 
 export default function RedesignedSkills() {
-  const [activeCategory, setActiveCategory] = useState("ml-ai")
+  const [activeCategory, setActiveCategory] = useState("programming")
   const [visualizationType, setVisualizationType] = useState<"chart" | "globe">("chart")
   const [isMounted, setIsMounted] = useState(false)
 
@@ -277,7 +278,7 @@ export default function RedesignedSkills() {
     <SectionContainer id="skills" className="bg-gradient-to-b from-background to-background/95">
       <SectionHeader
         title="Technical Skills"
-        subtitle="A comprehensive overview of my technical expertise across various domains, from machine learning and AI to software development and research."
+        // subtitle="A comprehensive overview of my technical expertise across various domains, from machine learning and AI to software development and research."
       />
 
       <ScrollReveal>
@@ -314,7 +315,7 @@ export default function RedesignedSkills() {
                 <BarChart3 className="h-4 w-4" />
                 <span>Chart View</span>
               </button>
-              <button
+              {/* <button
                 onClick={() => setVisualizationType("globe")}
                 className={cn(
                   "px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2",
@@ -323,7 +324,7 @@ export default function RedesignedSkills() {
               >
                 <Globe className="h-4 w-4" />
                 <span>3D Globe</span>
-              </button>
+              </button> */}
             </div>
           </div>
 
@@ -385,7 +386,7 @@ export default function RedesignedSkills() {
       </ScrollReveal>
 
       <div className="mt-12 text-center">
-        <ScrollReveal>
+        {/* <ScrollReveal>
           <p className="text-muted-foreground">
             These skills represent my technical expertise developed over years of professional experience and continuous
             learning.
@@ -393,7 +394,7 @@ export default function RedesignedSkills() {
             I'm constantly expanding my knowledge and staying up-to-date with the latest advancements in AI and
             technology.
           </p>
-        </ScrollReveal>
+        </ScrollReveal> */}
       </div>
     </SectionContainer>
   )

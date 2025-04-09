@@ -47,9 +47,9 @@ export default function Home() {
         </Suspense>
       </ErrorBoundary>
 
-      {/* <ErrorBoundary fallback={<SectionFallback title="Skills" />}>
+      <ErrorBoundary fallback={<SectionFallback title="Skills" />}>
         <SkillsSectionWrapper />
-      </ErrorBoundary> */}
+      </ErrorBoundary>
 
       {/* <ErrorBoundary fallback={<SectionFallback title="Experience" />}>
         <Suspense fallback={<LoadingSection name="Experience" />}>

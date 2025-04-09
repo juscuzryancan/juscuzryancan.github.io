@@ -19,24 +19,24 @@ interface SkillGroup {
 }
 
 const skillsData: SkillGroup[] = [
-  {
-    name: "Machine Learning",
-    color: "#8b5cf6",
-    skills: [
-      { area: "Deep Learning", value: 90, fullMark: 100 },
-      { area: "NLP", value: 85, fullMark: 100 },
-      { area: "Computer Vision", value: 75, fullMark: 100 },
-      { area: "Reinforcement Learning", value: 70, fullMark: 100 },
-      { area: "MLOps", value: 60, fullMark: 100 },
-      { area: "Generative AI", value: 80, fullMark: 100 },
-    ],
-  },
+  // {
+  //   name: "Machine Learning",
+  //   color: "#8b5cf6",
+  //   skills: [
+  //     { area: "Deep Learning", value: 90, fullMark: 100 },
+  //     { area: "NLP", value: 85, fullMark: 100 },
+  //     { area: "Computer Vision", value: 75, fullMark: 100 },
+  //     { area: "Reinforcement Learning", value: 70, fullMark: 100 },
+  //     { area: "MLOps", value: 60, fullMark: 100 },
+  //     { area: "Generative AI", value: 80, fullMark: 100 },
+  //   ],
+  // },
   {
     name: "Programming",
     color: "#3b82f6",
     skills: [
-      { area: "Python", value: 95, fullMark: 100 },
-      { area: "JavaScript/TypeScript", value: 90, fullMark: 100 },
+      // { area: "Python", value: 95, fullMark: 100 },
+      { area: "JavaScript/TypeScript", value: 80, fullMark: 100 },
       { area: "C++", value: 75, fullMark: 100 },
       { area: "SQL", value: 80, fullMark: 100 },
       { area: "R", value: 60, fullMark: 100 },
