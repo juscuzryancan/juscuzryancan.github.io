@@ -266,7 +266,7 @@ const skillsData = {
 }
 
 export default function RedesignedSkills() {
-  const [activeCategory, setActiveCategory] = useState("programming")
+  const [activeCategory, setActiveCategory] = useState("programming");
   const [visualizationType, setVisualizationType] = useState<"chart" | "globe">("chart")
   const [isMounted, setIsMounted] = useState(false)
 
@@ -283,7 +283,8 @@ export default function RedesignedSkills() {
 
       <ScrollReveal>
         <Tabs defaultValue="ml-ai" onValueChange={setActiveCategory} className="w-full">
-          <TabsList className="flex flex-wrap justify-center gap-2 mb-8 bg-transparent">
+          <div className="flex flex-col justify-center gap-12 mb-8">
+          <TabsList className="flex flex-wrap justify-center gap-2  bg-transparent">
             {skillCategories.map((category) => (
               <TabsTrigger
                 key={category.id}
@@ -303,7 +304,7 @@ export default function RedesignedSkills() {
             ))}
           </TabsList>
 
-          <div className="flex justify-center mb-8">
+          <div className="flex justify-center">
             <div className="bg-muted rounded-full p-1 flex">
               <button
                 onClick={() => setVisualizationType("chart")}
@@ -326,6 +327,7 @@ export default function RedesignedSkills() {
                 <span>3D Globe</span>
               </button> */}
             </div>
+          </div>
           </div>
 
           {skillCategories.map((category) => (
