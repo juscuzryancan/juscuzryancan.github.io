@@ -26,71 +26,63 @@ import {
 // Experience data
 const experiences = [
   {
-    id: "rfc",
-    title: "Technical Program Director",
-    company: "Rose from Concrete",
-    location: "Brooklyn, NY",
-    period: "January 2021 - Present",
+    id: "wmt",
+    title: "Software Engineer",
+    company: "Walmart",
+    location: "San Bruno, CA",
+    period: "April 2024 - Present",
     type: "work",
     description:
-      "Leading technical initiatives and community programs across Brooklyn, developing and implementing ML models for assessing program impact and reach.",
+      "Part of the Data Instrumentation Team as an Analytics Engineer",
     responsibilities: [
-      "Led multi-functional teams to develop AI-powered community tools, such as predictive models for social welfare programs benefiting over 20,000 NYC residents",
-      "Architected a decentralized energy solution leveraging AWS Lambda, Docker, and cloud computing to enhance sustainability in underserved communities",
-      "Created and deployed real-time monitoring tools to track the impact of community projects, providing data-driven insights for resource allocation",
-      "Forged strategic partnerships with 40+ community centers across Brooklyn, deploying ML models to assess and optimize program reach",
+      "Implement a tagging system for Sam's club ecommerce frontend components",
+      // "Architected a decentralized energy solution leveraging AWS Lambda, Docker, and cloud computing to enhance sustainability in underserved communities",
+      // "Created and deployed real-time monitoring tools to track the impact of community projects, providing data-driven insights for resource allocation",
+      // "Forged strategic partnerships with 40+ community centers across Brooklyn, deploying ML models to assess and optimize program reach",
     ],
-    skills: ["Python", "Machine Learning", "AWS", "Docker", "GCP", "Community Development"],
+    skills: ["Engine Migration", "Node.js", "Adobe Analytics", "QA", "Git", "Mobile App Emulators",  ],
     metrics: [
-      { value: "40+", label: "Community Centers" },
-      { value: "20,000+", label: "Residents impacted" },
-      { value: "15", label: "Team Size" },
+      { value: "500+", label: "Audited Tags" },
+      { value: "100+", label: "Tagged Components" },
     ],
     color: "from-indigo-600 to-purple-600",
   },
+  // {
+  //   id: "success-academy",
+  //   title: "Lead AP Physics Teacher",
+  //   company: "Success Academy High School of the Liberal Arts",
+  //   location: "New York, NY",
+  //   period: "July 2019 - 2022",
+  //   type: "work",
+  //   description:
+  //     "Led physics education initiatives, applying data analysis to optimize teaching strategies for over 150 students while managing a team of 13 teachers.",
+  //   responsibilities: [
+  //     "Applied advanced data analysis and statistical techniques in Python, optimizing lesson plans for 150+ students",
+  //     "Awarded the 'Teacher Excellence Award' for exceptional instructional strategies",
+  //     "Led a team of 13 teachers, fostering a collaborative academic environment",
+  //     "Developed innovative curriculum materials that improved student engagement and performance metrics",
+  //   ],
+  //   skills: ["Leadership", "Data Analysis", "Education", "Team Management", "Curriculum Development"],
+  //   metrics: [
+  //     { value: "150+", label: "Students" },
+  //     { value: "13", label: "Team Size" },
+  //     { value: "95%", label: "Pass Rate" },
+  //   ],
+  //   color: "from-green-600 to-emerald-600",
+  // },
   {
-    id: "success-academy",
-    title: "Lead AP Physics Teacher",
-    company: "Success Academy High School of the Liberal Arts",
-    location: "New York, NY",
-    period: "July 2019 - 2022",
-    type: "work",
-    description:
-      "Led physics education initiatives, applying data analysis to optimize teaching strategies for over 150 students while managing a team of 13 teachers.",
-    responsibilities: [
-      "Applied advanced data analysis and statistical techniques in Python, optimizing lesson plans for 150+ students",
-      "Awarded the 'Teacher Excellence Award' for exceptional instructional strategies",
-      "Led a team of 13 teachers, fostering a collaborative academic environment",
-      "Developed innovative curriculum materials that improved student engagement and performance metrics",
-    ],
-    skills: ["Leadership", "Data Analysis", "Education", "Team Management", "Curriculum Development"],
-    metrics: [
-      { value: "150+", label: "Students" },
-      { value: "13", label: "Team Size" },
-      { value: "95%", label: "Pass Rate" },
-    ],
-    color: "from-green-600 to-emerald-600",
-  },
-  {
-    id: "research-assistant",
-    title: "Research Assistant",
-    company: "City College of New York",
-    location: "New York, NY",
-    period: "2017 - 2019",
+    id: "fullstack-academy",
+    title: "Student",
+    company: "Fullstack Academy",
+    location: "Remote",
+    period: "2020 - 2020",
     type: "education",
     description:
-      "Conducted physics research focused on computational modeling of complex systems and data analysis of experimental results.",
+      "Web Development Bootcamp",
     responsibilities: [
-      "Published research on computational physics models in peer-reviewed journals",
-      "Developed custom analysis algorithms for experimental data processing",
-      "Presented findings at 3 national physics conferences",
-      "Collaborated with interdisciplinary teams on cutting-edge research projects",
     ],
-    skills: ["Python", "Data Analysis", "Research", "Scientific Computing", "Physics"],
+    skills: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express" , "PostgreSQL", "Git", "Collaboration"],
     metrics: [
-      { value: "3", label: "Publications" },
-      { value: "5", label: "Conferences" },
-      { value: "2", label: "Research Grants" },
     ],
     color: "from-blue-600 to-cyan-600",
   },
@@ -289,21 +281,21 @@ export default function RedesignedExperience() {
                                     ))}
                                   </div>
 
-                                  {experience.type === "work" && (
+                                  {/* {experience.type === "work" && (
                                     <div className="mt-4">
                                       <Button variant="outline" className="w-full">
                                         View Reference Letter
                                       </Button>
                                     </div>
-                                  )}
+                                  )} */}
 
-                                  {experience.type === "education" && (
+                                  {/* {experience.type === "education" && (
                                     <div className="mt-4">
                                       <Button variant="outline" className="w-full">
                                         View Transcript
                                       </Button>
                                     </div>
-                                  )}
+                                  )} */}
                                 </div>
                               </div>
                             </div>

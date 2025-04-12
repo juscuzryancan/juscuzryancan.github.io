@@ -51,11 +51,11 @@ export default function Home() {
         <SkillsSectionWrapper />
       </ErrorBoundary>
 
-      {/* <ErrorBoundary fallback={<SectionFallback title="Experience" />}>
+      <ErrorBoundary fallback={<SectionFallback title="Experience" />}>
         <Suspense fallback={<LoadingSection name="Experience" />}>
           <RedesignedExperience />
         </Suspense>
-      </ErrorBoundary> */}
+      </ErrorBoundary>
 
       {/* <ErrorBoundary fallback={<SectionFallback title="Projects" />}>
         <Suspense fallback={<LoadingSection name="Projects" />}>
