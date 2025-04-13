@@ -104,7 +104,7 @@ export default function RedesignedExperience() {
     <SectionContainer id="experience" className="bg-gradient-to-b from-background/95 to-background">
       <SectionHeader
         title="Professional Journey"
-        subtitle="My professional experiences and career highlights in AI development, education, and community building."
+        subtitle="My professional experiences and career highlights in Software Engineering and education."
       />
 
       <ScrollReveal>
