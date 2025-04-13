@@ -47,6 +47,27 @@ const experiences = [
     ],
     color: "from-indigo-600 to-purple-600",
   },
+  {
+    id: "zaghop",
+    title: "Software Engineer",
+    company: "Zaghop LLC",
+    location: "Remote",
+    period: "Mar 2022 - Feb 2023",
+    type: "work",
+    description:
+      "",
+    responsibilities: [
+      "Developed a SAAS to create PDF templates for drug companies",
+      // "Architected a decentralized energy solution leveraging AWS Lambda, Docker, and cloud computing to enhance sustainability in underserved communities",
+      // "Created and deployed real-time monitoring tools to track the impact of community projects, providing data-driven insights for resource allocation",
+      // "Forged strategic partnerships with 40+ community centers across Brooklyn, deploying ML models to assess and optimize program reach",
+    ],
+    skills: ["React.js", "Node.js", "QA", "React Testing Library", "Git", "Puppeteer"],
+    metrics: [
+      { value: "100+", label: "PDFs Created" },
+    ],
+    color: "from-indigo-600 to-purple-600",
+  },
   // {
   //   id: "success-academy",
   //   title: "Lead AP Physics Teacher",
