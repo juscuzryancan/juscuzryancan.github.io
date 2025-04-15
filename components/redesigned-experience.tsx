@@ -36,6 +36,7 @@ const experiences = [
       "Part of the Data Instrumentation Team as an Analytics Engineer",
     responsibilities: [
       "Implement a tagging system for Sam's club ecommerce frontend components",
+      "Created an analytics dashboard to track the impact of the tagging system which is closely used by our VPs",
       // "Architected a decentralized energy solution leveraging AWS Lambda, Docker, and cloud computing to enhance sustainability in underserved communities",
       // "Created and deployed real-time monitoring tools to track the impact of community projects, providing data-driven insights for resource allocation",
       // "Forged strategic partnerships with 40+ community centers across Brooklyn, deploying ML models to assess and optimize program reach",
