@@ -57,11 +57,11 @@ export default function Home() {
         </Suspense>
       </ErrorBoundary>
 
-      {/* <ErrorBoundary fallback={<SectionFallback title="Projects" />}>
+      <ErrorBoundary fallback={<SectionFallback title="Projects" />}>
         <Suspense fallback={<LoadingSection name="Projects" />}>
           <RedesignedProjects />
         </Suspense>
-      </ErrorBoundary> */}
+      </ErrorBoundary>
 
       {/* <ErrorBoundary fallback={<SectionFallback title="Case Studies" />}>
         <Suspense fallback={<LoadingSection name="Case Studies" />}>
