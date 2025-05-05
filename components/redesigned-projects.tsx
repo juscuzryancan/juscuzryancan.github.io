@@ -50,6 +50,27 @@ const projectCategories = [
 
 // Project data
 const projects = [
+  {
+    id: 1,
+    title: "Virtual Traders",
+    category: "web",
+    description:
+       "A fullstack application for a trading card shop with a full frontend and backend",
+    longDescription:
+      "",
+    technologies: ["React", "Express", "Node.js", "PostgreSQL"],
+    imageUrl: "/placeholder.svg?height=600&width=800",
+    demoUrl: "https://virtual-trader-44d67a97b643.herokuapp.com/",
+    githubUrl: "https://github.com/juscuzryancan/virtual-velocity",
+    color: "from-blue-600 to-violet-600",
+    featured: true,
+    completed: "2020",
+    teamSize: 4,
+    difficulty: 5,
+    achievements: [
+      "Created",
+    ],
+  },
   // {
   //   id: 1,
   //   title: "Voice Cloning & Audio Processing Suite",
@@ -249,7 +270,7 @@ export default function RedesignedProjects() {
       <SectionContainer id="projects" className="relative">
         <SectionHeader
           title="Project Portfolio"
-          subtitle="Explore my portfolio of AI, machine learning, and software development projects."
+          subtitle="A Plethora of Programming Projects"
         />
         <div className="flex justify-center items-center py-20">
           <Loader2 className="h-8 w-8 animate-spin text-primary mr-2" />
