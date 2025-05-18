@@ -88,7 +88,7 @@ export default function EnhancedFooter() {
                   url="https://www.linkedin.com/in/ryanrileypuzon"
                   label="LinkedIn"
                 />
-                <SocialButton icon={<Twitter className="h-5 w-5" />} url="https://twitter.com" label="Twitter" />
+                {/* <SocialButton icon={<Twitter className="h-5 w-5" />} url="https://twitter.com" label="Twitter" /> */}
                 <SocialButton
                   icon={<Mail className="h-5 w-5" />}
                   url="mailto:rrgpuzon@gmail.com"
@@ -111,8 +111,8 @@ export default function EnhancedFooter() {
                 <FooterLink href="#skills" label="Skills" />
                 <FooterLink href="#experience" label="Experience" />
                 <FooterLink href="#projects" label="Projects" />
-                <FooterLink href="#education" label="Education" />
-                <FooterLink href="#publications" label="Publications" />
+                {/* <FooterLink href="#education" label="Education" />
+                <FooterLink href="#publications" label="Publications" /> */}
                 <FooterLink href="#contact" label="Contact" />
               </ul>
             </motion.div>
@@ -129,20 +129,20 @@ export default function EnhancedFooter() {
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-muted-foreground">
                   <Mail className="h-4 w-4 text-primary" />
-                  <span>shaq.williams.ai@gmail.com</span>
+                  <span>rrgpuzon@gmail.com</span>
                 </li>
-                <li className="flex items-center gap-3 text-muted-foreground">
+                {/* <li className="flex items-center gap-3 text-muted-foreground">
                   <Phone className="h-4 w-4 text-primary" />
                   <span>(917) 831-2482</span>
-                </li>
+                </li> */}
                 <li className="flex items-center gap-3 text-muted-foreground">
                   <MapPin className="h-4 w-4 text-primary" />
-                  <span>New York, NY</span>
+                  <span>Bay Area, CA</span>
                 </li>
-                <li className="flex items-center gap-3 text-muted-foreground">
+                {/* <li className="flex items-center gap-3 text-muted-foreground">
                   <Calendar className="h-4 w-4 text-primary" />
                   <span>Available for projects</span>
-                </li>
+                </li> */}
               </ul>
 
               {/* Add Theme Preview */}
@@ -152,7 +152,7 @@ export default function EnhancedFooter() {
             </motion.div>
           </div>
 
-          <div>
+          {/* <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -209,7 +209,7 @@ export default function EnhancedFooter() {
 
               <p className="text-xs text-muted-foreground mt-2">I respect your privacy. Unsubscribe at any time.</p>
             </motion.div>
-          </div>
+          </div> */}
         </div>
 
         <div className="border-t pt-6 flex flex-col md:flex-row justify-between items-center">

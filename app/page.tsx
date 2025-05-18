@@ -99,7 +99,7 @@ export default function Home() {
         </Suspense>
       </ErrorBoundary> */}
 
-      {/* <EnhancedFooter /> */}
+      <EnhancedFooter />
     </main>
   )
 }
