@@ -59,7 +59,7 @@ const projects = [
     longDescription:
       "",
     technologies: ["React", "Express", "Node.js", "PostgreSQL"],
-    imageUrl: "/placeholder.svg?height=600&width=800",
+    imageUrl: "/virtual-traders.png?height=600&width=800",
     demoUrl: "https://virtual-trader-44d67a97b643.herokuapp.com/",
     githubUrl: "https://github.com/juscuzryancan/virtual-velocity",
     color: "from-blue-600 to-violet-600",
