@@ -12,6 +12,5 @@ export default function NotFound() {
         Return Home
       </a>
     </div>
-  )
+  );
 }
-

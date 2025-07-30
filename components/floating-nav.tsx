@@ -1,94 +1,128 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Home, Code, Briefcase, GraduationCap, Book, Send, Menu, X, ChevronUp } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-import { useToast } from "@/components/ui/use-toast"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Home,
+  Code,
+  Briefcase,
+  GraduationCap,
+  Book,
+  Send,
+  Menu,
+  X,
+  ChevronUp,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { useToast } from "@/components/ui/use-toast";
 
 interface NavItem {
-  name: string
-  href: string
-  icon: React.ReactNode
+  name: string;
+  href: string;
+  icon: React.ReactNode;
 }
 
 const navItems: NavItem[] = [
   { name: "Home", href: "#", icon: <Home className="h-[18px] w-[18px]" /> },
-  { name: "Skills", href: "#skills", icon: <Code className="h-[18px] w-[18px]" /> },
-  { name: "Experience", href: "#experience", icon: <Briefcase className="h-[18px] w-[18px]" /> },
-  { name: "Projects", href: "#projects", icon: <Code className="h-[18px] w-[18px] rotate-90" /> },
-  { name: "Education", href: "#education", icon: <GraduationCap className="h-[18px] w-[18px]" /> },
-  { name: "Publications", href: "#publications", icon: <Book className="h-[18px] w-[18px]" /> },
-  { name: "Contact", href: "#contact", icon: <Send className="h-[18px] w-[18px]" /> },
-]
+  {
+    name: "Skills",
+    href: "#skills",
+    icon: <Code className="h-[18px] w-[18px]" />,
+  },
+  {
+    name: "Experience",
+    href: "#experience",
+    icon: <Briefcase className="h-[18px] w-[18px]" />,
+  },
+  {
+    name: "Projects",
+    href: "#projects",
+    icon: <Code className="h-[18px] w-[18px] rotate-90" />,
+  },
+  {
+    name: "Education",
+    href: "#education",
+    icon: <GraduationCap className="h-[18px] w-[18px]" />,
+  },
+  {
+    name: "Publications",
+    href: "#publications",
+    icon: <Book className="h-[18px] w-[18px]" />,
+  },
+];
 
 export default function FloatingNav() {
-  const [activeSection, setActiveSection] = useState("")
-  const [isVisible, setIsVisible] = useState(false)
-  const [showBackToTop, setShowBackToTop] = useState(false)
-  const [isOpen, setIsOpen] = useState(false)
-  const { toast } = useToast()
+  const [activeSection, setActiveSection] = useState("");
+  const [isVisible, setIsVisible] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const { toast } = useToast();
 
   useEffect(() => {
     const handleScroll = () => {
       // Show nav after scrolling down a bit
       if (window.scrollY > 300) {
-        setIsVisible(true)
+        setIsVisible(true);
       } else {
-        setIsVisible(false)
+        setIsVisible(false);
       }
 
       // Show back to top button after scrolling down further
       if (window.scrollY > 800) {
-        setShowBackToTop(true)
+        setShowBackToTop(true);
       } else {
-        setShowBackToTop(false)
+        setShowBackToTop(false);
       }
 
       // Determine active section
-      const sections = navItems.map((item) => item.href.slice(1)).filter(Boolean)
+      const sections = navItems
+        .map((item) => item.href.slice(1))
+        .filter(Boolean);
 
       const currentSection = sections.reduce((current, section) => {
-        const element = document.getElementById(section)
+        const element = document.getElementById(section);
         if (element) {
-          const rect = element.getBoundingClientRect()
+          const rect = element.getBoundingClientRect();
           // Consider a section active if it's in the top half of the viewport
           if (rect.top <= window.innerHeight / 2 && rect.bottom >= 0) {
-            return section
+            return section;
           }
         }
-        return current
-      }, "")
+        return current;
+      }, "");
 
-      setActiveSection(currentSection)
-    }
+      setActiveSection(currentSection);
+    };
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll);
     // Initial check
-    handleScroll()
+    handleScroll();
 
     return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-  const handleItemClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault()
-    const element = document.querySelector(href)
+  const handleItemClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-      setIsOpen(false) // Close mobile menu on click
+      element.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false); // Close mobile menu on click
     } else {
       toast({
         title: "Section not found",
         description: `The section "${href}" could not be found on the page.`,
         variant: "destructive",
-      })
+      });
     }
-  }
+  };
 
   return (
     <>
@@ -152,7 +186,11 @@ export default function FloatingNav() {
               className="h-12 w-12 rounded-full shadow-lg bg-primary text-white"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </motion.div>
         )}
@@ -213,6 +251,5 @@ export default function FloatingNav() {
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }
-

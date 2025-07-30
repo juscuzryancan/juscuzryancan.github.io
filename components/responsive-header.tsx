@@ -1,38 +1,37 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { ThemeSwitcher } from "@/components/theme-switcher"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
-import { cn } from "@/lib/utils"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { ThemeSwitcher } from "@/components/theme-switcher";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 export default function ResponsiveHeader() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [isMounted, setIsMounted] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   // Handle scroll effect
   useEffect(() => {
-    setIsMounted(true)
+    setIsMounted(true);
 
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
+      setIsScrolled(window.scrollY > 10);
+    };
 
     // Only add event listener client-side
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { name: "Home", href: "#" },
     { name: "Skills", href: "#skills" },
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
-  ]
+  ];
 
   // If not mounted yet, render a simpler version to avoid hydration issues
   if (!isMounted) {
@@ -43,7 +42,9 @@ export default function ResponsiveHeader() {
             <div className="font-bold text-xl">RRP</div>
             <div className="hidden md:block">
               <div className="font-bold">Ryan Riley Puzon</div>
-              <div className="text-xs text-muted-foreground">Software Engineer</div>
+              <div className="text-xs text-muted-foreground">
+                Software Engineer
+              </div>
             </div>
           </div>
 
@@ -57,14 +58,16 @@ export default function ResponsiveHeader() {
           </div>
         </div>
       </header>
-    )
+    );
   }
 
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : "bg-transparent",
+        isScrolled
+          ? "bg-background/80 backdrop-blur-md border-b border-border"
+          : "bg-transparent",
       )}
     >
       <div className="container flex h-16 items-center justify-between px-4">
@@ -80,7 +83,9 @@ export default function ResponsiveHeader() {
             </div>
             <div className="hidden md:block">
               <div className="font-bold">Ryan Riley Puzon</div>
-              <div className="text-xs text-muted-foreground">Software Engineer</div>
+              <div className="text-xs text-muted-foreground">
+                Software Engineer
+              </div>
             </div>
           </div>
         </motion.div>
@@ -122,7 +127,11 @@ export default function ResponsiveHeader() {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
-              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {mobileMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -156,7 +165,9 @@ export default function ResponsiveHeader() {
               ))}
               <div className="pt-2 border-t border-border">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-muted-foreground">Theme settings</span>
+                  <span className="text-sm text-muted-foreground">
+                    Theme settings
+                  </span>
                 </div>
               </div>
             </div>
@@ -164,6 +175,5 @@ export default function ResponsiveHeader() {
         )}
       </AnimatePresence>
     </header>
-  )
+  );
 }
-

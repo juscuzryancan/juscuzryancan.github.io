@@ -132,7 +132,7 @@ export default function RedesignedHero() {
 
           <ScrollReveal delay={0.3}>
             <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-6 md:mb-8">
-              {["Frontend", "Backend"].map((skill) => (
+              {["Frontend", "Backend", "Full-Stack"].map((skill) => (
                 <Badge
                   key={skill}
                   variant="outline"
@@ -154,16 +154,6 @@ export default function RedesignedHero() {
                 <span className="relative z-10">View Projects</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-happy-hearts to-bite-tongue opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 relative z-10" />
-              </Button>
-
-              <Button
-                size="lg"
-                variant="outline"
-                onClick={handleContactClick}
-                className="group relative overflow-hidden border-copper-coin/50 hover:border-copper-coin transition-colors duration-300"
-              >
-                <span className="relative z-10">Contact Me</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-copper-coin/10 to-golden-nugget/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Button>
             </div>
           </ScrollReveal>

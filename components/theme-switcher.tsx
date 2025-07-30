@@ -1,27 +1,35 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { useExtendedTheme, type ColorTheme, type Theme } from "@/components/theme-provider"
-import { Button } from "@/components/ui/button"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { cn } from "@/lib/utils"
-import { Sun, Moon, Laptop, Palette, Check } from "lucide-react"
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import {
+  useExtendedTheme,
+  type ColorTheme,
+  type Theme,
+} from "@/components/theme-provider";
+import { Button } from "@/components/ui/button";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { cn } from "@/lib/utils";
+import { Sun, Moon, Laptop, Palette, Check } from "lucide-react";
 
 interface ThemeOption {
-  value: Theme
-  label: string
-  icon: React.ReactNode
+  value: Theme;
+  label: string;
+  icon: React.ReactNode;
 }
 
 interface ColorOption {
-  value: ColorTheme
-  label: string
-  color: string
-  darkColor: string
+  value: ColorTheme;
+  label: string;
+  color: string;
+  darkColor: string;
 }
 
 const themeOptions: ThemeOption[] = [
@@ -40,7 +48,7 @@ const themeOptions: ThemeOption[] = [
     label: "System",
     icon: <Laptop className="h-5 w-5" />,
   },
-]
+];
 
 const colorOptions: ColorOption[] = [
   {
@@ -79,29 +87,34 @@ const colorOptions: ColorOption[] = [
     color: "from-gray-400 to-gray-600",
     darkColor: "from-gray-600 to-gray-800",
   },
-]
+];
 
 export function ThemeSwitcher() {
-  const { theme, setTheme, resolvedTheme, colorTheme, setColorTheme } = useExtendedTheme()
-  const [isOpen, setIsOpen] = useState(false)
-  const [activeTab, setActiveTab] = useState<"mode" | "color">("mode")
-  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme, resolvedTheme, colorTheme, setColorTheme } =
+    useExtendedTheme();
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<"mode" | "color">("mode");
+  const [mounted, setMounted] = useState(false);
 
   // After mounting, we can safely show the UI
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   if (!mounted) {
     return (
-      <Button variant="outline" size="icon" className="relative overflow-hidden">
+      <Button
+        variant="outline"
+        size="icon"
+        className="relative overflow-hidden"
+      >
         <span className="sr-only">Toggle theme</span>
       </Button>
-    )
+    );
   }
 
-  const currentTheme = theme === "system" ? resolvedTheme : theme
-  const isDark = currentTheme === "dark"
+  const currentTheme = theme === "system" ? resolvedTheme : theme;
+  const isDark = currentTheme === "dark";
 
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
@@ -116,7 +129,7 @@ export function ThemeSwitcher() {
           <span className="sr-only">Toggle theme</span>
         </Button>
       </PopoverTrigger>
-      <PopoverContent align="end" className="w-[240px] p-0">
+      <PopoverContent align="end" className="w-[320px] p-0">
         <div className="p-1">
           <Tabs
             defaultValue="mode"
@@ -141,7 +154,11 @@ export function ThemeSwitcher() {
                       variant="outline"
                       size="sm"
                       onClick={() => setTheme(option.value)}
-                      className={cn("justify-start gap-1", theme === option.value && "border-primary bg-primary/10")}
+                      className={cn(
+                        "justify-start gap-1",
+                        theme === option.value &&
+                          "border-primary bg-primary/10",
+                      )}
                     >
                       {option.icon}
                       <span className="text-xs">{option.label}</span>
@@ -181,6 +198,5 @@ export function ThemeSwitcher() {
         </div>
       </PopoverContent>
     </Popover>
-  )
+  );
 }
-
