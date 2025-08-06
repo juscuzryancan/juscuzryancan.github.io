@@ -1,19 +1,28 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
-import { SectionContainer, SectionHeader } from "@/components/ui/section-container"
-import { ScrollReveal } from "@/components/ui/scroll-reveal"
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
-import { useToast } from "@/components/ui/use-toast"
-import { cn } from "@/lib/utils"
-import { useIsClient } from "@/hooks/use-is-client"
-import { ErrorBoundary } from "@/components/error-boundary"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import {
+  SectionContainer,
+  SectionHeader,
+} from "@/components/ui/section-container";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { useToast } from "@/components/ui/use-toast";
+import { cn } from "@/lib/utils";
+import { useIsClient } from "@/hooks/use-is-client";
+import { ErrorBoundary } from "@/components/error-boundary";
 import {
   ExternalLink,
   Github,
@@ -33,7 +42,87 @@ import {
   MessageSquare,
   Zap,
   Loader2,
-} from "lucide-react"
+} from "lucide-react";
+import ProjectsListModal, { Project } from "./projects-list-modal";
+
+const sampleProjects: Project[] = [
+  {
+    id: 1,
+    title: "Virtual Traders",
+    category: "web",
+    description:
+      "A fullstack application for a trading card shop with a full frontend and backend",
+    longDescription:
+      "Complete e-commerce solution built with React and Express.js",
+    technologies: ["React", "Express", "Node.js", "PostgreSQL"],
+    imageUrl: "/virtual-traders.png",
+    demoUrl: "https://virtual-trader-44d67a97b643.herokuapp.com/",
+    githubUrl: "https://github.com/juscuzryancan/virtual-velocity",
+    color: "from-blue-600 to-violet-600",
+    featured: true,
+    completed: "2020",
+    teamSize: 4,
+    difficulty: 5,
+    achievements: ["Created full-stack e-commerce platform"],
+    categories: ["web", "fullstack"],
+  },
+  {
+    id: 2,
+    title: "Fitness Tracker",
+    category: "web",
+    description: "Fullstack application for a fitness tracker",
+    longDescription:
+      "Personal fitness tracking application with data visualization",
+    technologies: ["React", "Node.js", "MongoDB"],
+    imageUrl: "/placeholder.svg",
+    demoUrl: "https://lit-tor-21021-b8c9417056cb.herokuapp.com/",
+    githubUrl: "https://github.com/juscuzryancan/strangers-react",
+    color: "from-green-600 to-teal-600",
+    featured: false,
+    completed: "2020",
+    teamSize: 1,
+    difficulty: 3,
+    achievements: ["Built personal fitness tracking system"],
+    categories: ["web", "health"],
+  },
+  {
+    id: 3,
+    title: "Voice Cloning Suite",
+    category: "ai",
+    description: "Real-time voice cloning and audio processing system",
+    longDescription:
+      "Advanced AI system for voice synthesis and audio manipulation",
+    technologies: ["Python", "TensorFlow", "PyTorch", "FastAPI"],
+    imageUrl: "/placeholder.svg",
+    demoUrl: "#",
+    githubUrl: "#",
+    color: "from-purple-600 to-pink-600",
+    featured: true,
+    completed: "2023",
+    teamSize: 3,
+    difficulty: 5,
+    achievements: ["Achieved 95% voice similarity", "Real-time processing"],
+    categories: ["ai", "audio"],
+  },
+  {
+    id: 4,
+    title: "Data Analytics Platform",
+    category: "data",
+    description: "Comprehensive data analysis and visualization platform",
+    longDescription: "Business intelligence platform with advanced analytics",
+    technologies: ["Python", "Pandas", "D3.js", "PostgreSQL"],
+    imageUrl: "/placeholder.svg",
+    demoUrl: "#",
+    githubUrl: "#",
+    color: "from-orange-600 to-red-600",
+    featured: false,
+    completed: "2022",
+    teamSize: 2,
+    difficulty: 4,
+    achievements: ["Processed 1M+ data points", "Real-time dashboards"],
+    categories: ["data", "analytics"],
+  },
+];
 
 // Project categories
 const projectCategories = [
@@ -46,7 +135,7 @@ const projectCategories = [
   // { id: "security", name: "Security", icon: <Shield className="h-4 w-4" /> },
   // { id: "communication", name: "Communication", icon: <MessageSquare className="h-4 w-4" /> },
   // { id: "research", name: "Research", icon: <BookOpen className="h-4 w-4" /> },
-]
+];
 
 // Project data
 const projects = [
@@ -55,9 +144,8 @@ const projects = [
     title: "Virtual Traders",
     category: "web",
     description:
-       "A fullstack application for a trading card shop with a full frontend and backend",
-    longDescription:
-      "",
+      "A fullstack application for a trading card shop with a full frontend and backend",
+    longDescription: "",
     technologies: ["React", "Express", "Node.js", "PostgreSQL"],
     imageUrl: "/virtual-traders.png?height=600&width=800",
     demoUrl: "https://virtual-trader-44d67a97b643.herokuapp.com/",
@@ -67,18 +155,14 @@ const projects = [
     completed: "2020",
     teamSize: 4,
     difficulty: 5,
-    achievements: [
-      "Created",
-    ],
+    achievements: ["Created"],
   },
   {
     id: 2,
     title: "Fitness Tracker",
     category: "web",
-    description:
-       "Fullstack application for a fitness tracker",
-    longDescription:
-      "",
+    description: "Fullstack application for a fitness tracker",
+    longDescription: "",
     technologies: ["React"],
     imageUrl: "",
     demoUrl: "https://lit-tor-21021-b8c9417056cb.herokuapp.com/",
@@ -88,18 +172,14 @@ const projects = [
     completed: "2020",
     teamSize: 1,
     difficulty: 3,
-    achievements: [
-      "Created",
-    ],
+    achievements: ["Created"],
   },
   {
     id: 3,
     title: "Stranger's Things",
     category: "web",
-    description:
-       "Craigslist clone",
-    longDescription:
-      "",
+    description: "Craigslist clone",
+    longDescription: "",
     technologies: ["React"],
     imageUrl: "",
     demoUrl: "https://app.netlify.com/projects/kind-mahavira-29ba42/overview",
@@ -109,18 +189,14 @@ const projects = [
     completed: "2020",
     teamSize: 1,
     difficulty: 3,
-    achievements: [
-      "Created",
-    ],
+    achievements: ["Created"],
   },
   {
     id: 4,
     title: "Snake Game",
     category: "web",
-    description:
-       "Snake Game",
-    longDescription:
-      "",
+    description: "Snake Game",
+    longDescription: "",
     technologies: ["Vanilla JS", "HTML", "CSS"],
     imageUrl: "",
     demoUrl: "https://suspicious-boyd-f07649.netlify.app/",
@@ -130,18 +206,14 @@ const projects = [
     completed: "2020",
     teamSize: 1,
     difficulty: 3,
-    achievements: [
-      "Created",
-    ],
+    achievements: ["Created"],
   },
   {
     id: 5,
     title: "Minesweeper",
     category: "web",
-    description:
-       "Minesweeper game",
-    longDescription:
-      "",
+    description: "Minesweeper game",
+    longDescription: "",
     technologies: ["Vanilla JS", "HTML", "CSS"],
     imageUrl: "",
     demoUrl: "https://flamboyant-liskov-0c5218.netlify.app/minesweeper/",
@@ -151,9 +223,7 @@ const projects = [
     completed: "2020",
     teamSize: 1,
     difficulty: 3,
-    achievements: [
-      "Created",
-    ],
+    achievements: ["Created"],
   },
   // {
   //   id: 1,
@@ -294,59 +364,70 @@ const projects = [
   //     "Presented findings to education stakeholders",
   //   ],
   // },
-]
+];
 
 export default function RedesignedProjects() {
-  const [searchQuery, setSearchQuery] = useState("")
-  const [selectedCategory, setSelectedCategory] = useState("all")
-  const [selectedProject, setSelectedProject] = useState<(typeof projects)[0] | null>(null)
-  const [currentFeaturedIndex, setCurrentFeaturedIndex] = useState(0)
-  const [direction, setDirection] = useState(0)
-  const [isDialogOpen, setIsDialogOpen] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
-  const { toast } = useToast()
-  const isClient = useIsClient()
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [currentFeaturedIndex, setCurrentFeaturedIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const { toast } = useToast();
+  const isClient = useIsClient();
+  const [showProjectsModal, setShowProjectsModal] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
+  const handleProjectSelect = (project: Project) => {
+    setSelectedProject(project);
+    setShowProjectsModal(false);
+    console.log("Selected project:", project);
+  };
   // Get featured projects
-  const featuredProjects = projects.filter((project) => project.featured)
+  const featuredProjects = projects.filter((project) => project.featured);
 
   // Filter projects based on category
   const filteredProjects =
     selectedCategory === "all"
       ? projects.filter((project) => !project.featured)
-      : projects.filter((project) => project.category === selectedCategory && !project.featured)
+      : projects.filter(
+          (project) =>
+            project.category === selectedCategory && !project.featured,
+        );
 
   const handleNext = () => {
-    if (!isClient) return
-    setDirection(1)
-    setCurrentFeaturedIndex((prev) => (prev + 1) % featuredProjects.length)
-  }
+    if (!isClient) return;
+    setDirection(1);
+    setCurrentFeaturedIndex((prev) => (prev + 1) % featuredProjects.length);
+  };
 
   const handlePrev = () => {
-    if (!isClient) return
-    setDirection(-1)
-    setCurrentFeaturedIndex((prev) => (prev - 1 + featuredProjects.length) % featuredProjects.length)
-  }
+    if (!isClient) return;
+    setDirection(-1);
+    setCurrentFeaturedIndex(
+      (prev) => (prev - 1 + featuredProjects.length) % featuredProjects.length,
+    );
+  };
 
   const handleDemoClick = (url: string) => {
-    if (!isClient) return
+    if (!isClient) return;
     toast({
       title: "Demo Link",
       description: "Opening demo in a new tab...",
       duration: 3000,
-    })
-    window.open(url, "_blank")
-  }
+    });
+    window.open(url, "_blank");
+  };
 
   // Simulate loading delay
   useEffect(() => {
     if (isClient) {
       const timer = setTimeout(() => {
-        setIsLoading(false)
-      }, 500)
-      return () => clearTimeout(timer)
+        setIsLoading(false);
+      }, 500);
+      return () => clearTimeout(timer);
     }
-  }, [isClient])
+  }, [isClient]);
 
   // If not client-side yet, show a loading state
   if (!isClient || isLoading) {
@@ -361,7 +442,7 @@ export default function RedesignedProjects() {
           <span>Loading projects...</span>
         </div>
       </SectionContainer>
-    )
+    );
   }
 
   return (
@@ -369,12 +450,10 @@ export default function RedesignedProjects() {
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl -z-10" />
-
       <SectionHeader
         title="Project Portfolio"
         subtitle="A Plethora of Programming Projects"
       />
-
       {featuredProjects.length > 0 && (
         <div className="mb-16">
           <ScrollReveal>
@@ -415,7 +494,10 @@ export default function RedesignedProjects() {
                   <div className="absolute inset-0 flex flex-col md:flex-row">
                     <div className="relative w-full h-48 md:h-auto md:w-1/2">
                       <Image
-                        src={featuredProjects[currentFeaturedIndex].imageUrl || "/placeholder.svg"}
+                        src={
+                          featuredProjects[currentFeaturedIndex].imageUrl ||
+                          "/placeholder.svg"
+                        }
                         alt={featuredProjects[currentFeaturedIndex].title}
                         fill
                         className="object-cover"
@@ -443,17 +525,23 @@ export default function RedesignedProjects() {
                       </p>
 
                       <div className="flex flex-wrap gap-2 mb-4 md:mb-6">
-                        {featuredProjects[currentFeaturedIndex].technologies.slice(0, 3).map((tech, index) => (
-                          <Badge
-                            key={index}
-                            className="bg-white/20 hover:bg-white/30 text-white border-none backdrop-blur-sm"
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
-                        {featuredProjects[currentFeaturedIndex].technologies.length > 3 && (
+                        {featuredProjects[currentFeaturedIndex].technologies
+                          .slice(0, 3)
+                          .map((tech, index) => (
+                            <Badge
+                              key={index}
+                              className="bg-white/20 hover:bg-white/30 text-white border-none backdrop-blur-sm"
+                            >
+                              {tech}
+                            </Badge>
+                          ))}
+                        {featuredProjects[currentFeaturedIndex].technologies
+                          .length > 3 && (
                           <Badge className="bg-white/20 hover:bg-white/30 text-white border-none backdrop-blur-sm">
-                            +{featuredProjects[currentFeaturedIndex].technologies.length - 3} more
+                            +
+                            {featuredProjects[currentFeaturedIndex].technologies
+                              .length - 3}{" "}
+                            more
                           </Badge>
                         )}
                       </div>
@@ -461,7 +549,11 @@ export default function RedesignedProjects() {
                       <div className="flex flex-wrap gap-3">
                         <Button
                           className="bg-white text-black hover:bg-white/90 group text-sm"
-                          onClick={() => handleDemoClick(featuredProjects[currentFeaturedIndex].demoUrl)}
+                          onClick={() =>
+                            handleDemoClick(
+                              featuredProjects[currentFeaturedIndex].demoUrl,
+                            )
+                          }
                         >
                           Live Demo
                           <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -473,7 +565,9 @@ export default function RedesignedProjects() {
                           asChild
                         >
                           <a
-                            href={featuredProjects[currentFeaturedIndex].githubUrl}
+                            href={
+                              featuredProjects[currentFeaturedIndex].githubUrl
+                            }
                             target="_blank"
                             rel="noopener noreferrer"
                           >
@@ -486,8 +580,10 @@ export default function RedesignedProjects() {
                           variant="outline"
                           className="border-white text-white hover:bg-white/20 gap-2 text-sm"
                           onClick={() => {
-                            setSelectedProject(featuredProjects[currentFeaturedIndex])
-                            setIsDialogOpen(true)
+                            setSelectedProject(
+                              featuredProjects[currentFeaturedIndex],
+                            );
+                            setIsDialogOpen(true);
                           }}
                         >
                           <Code className="h-4 w-4" />
@@ -525,11 +621,13 @@ export default function RedesignedProjects() {
                     key={index}
                     className={cn(
                       "w-2 h-2 rounded-full transition-all",
-                      currentFeaturedIndex === index ? "bg-white scale-125" : "bg-white/50 hover:bg-white/80",
+                      currentFeaturedIndex === index
+                        ? "bg-white scale-125"
+                        : "bg-white/50 hover:bg-white/80",
                     )}
                     onClick={() => {
-                      setDirection(index > currentFeaturedIndex ? 1 : -1)
-                      setCurrentFeaturedIndex(index)
+                      setDirection(index > currentFeaturedIndex ? 1 : -1);
+                      setCurrentFeaturedIndex(index);
                     }}
                     aria-label={`Go to project ${index + 1}`}
                   />
@@ -539,9 +637,12 @@ export default function RedesignedProjects() {
           </ScrollReveal>
         </div>
       )}
-
       <ScrollReveal>
-        <Tabs defaultValue="all" onValueChange={setSelectedCategory} className="w-full">
+        <Tabs
+          defaultValue="all"
+          onValueChange={setSelectedCategory}
+          className="w-full"
+        >
           <div className="overflow-x-auto pb-2 no-scrollbar">
             <TabsList className="flex justify-start gap-2 mb-8 bg-transparent w-max mx-auto">
               {projectCategories.map((category) => (
@@ -577,8 +678,8 @@ export default function RedesignedProjects() {
                     <ProjectCard
                       project={project}
                       onSelect={() => {
-                        setSelectedProject(project)
-                        setIsDialogOpen(true)
+                        setSelectedProject(project);
+                        setIsDialogOpen(true);
                       }}
                     />
                   </motion.div>
@@ -588,7 +689,6 @@ export default function RedesignedProjects() {
           </div>
         </Tabs>
       </ScrollReveal>
-
       {/* Project details dialog */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden p-0 w-[95vw]">
@@ -608,8 +708,12 @@ export default function RedesignedProjects() {
                               ? "Audio & Voice Tech"
                               : "Research"}
                     </Badge>
-                    <DialogTitle className="text-xl sm:text-2xl">{selectedProject.title}</DialogTitle>
-                    <DialogDescription className="mt-2 text-sm">{selectedProject.description}</DialogDescription>
+                    <DialogTitle className="text-xl sm:text-2xl">
+                      {selectedProject.title}
+                    </DialogTitle>
+                    <DialogDescription className="mt-2 text-sm">
+                      {selectedProject.description}
+                    </DialogDescription>
                   </div>
                   <div className="flex">
                     {Array.from({ length: 5 }).map((_, i) => (
@@ -641,22 +745,36 @@ export default function RedesignedProjects() {
                   <TabsContent value="overview" className="mt-0 h-full">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                       <div className="lg:col-span-2">
-                        <h4 className="text-lg font-semibold mb-3">Project Details</h4>
-                        <p className="mb-6 text-sm sm:text-base">{selectedProject.longDescription}</p>
+                        <h4 className="text-lg font-semibold mb-3">
+                          Project Details
+                        </h4>
+                        <p className="mb-6 text-sm sm:text-base">
+                          {selectedProject.longDescription}
+                        </p>
 
-                        <h4 className="text-lg font-semibold mb-3">Key Achievements</h4>
+                        <h4 className="text-lg font-semibold mb-3">
+                          Key Achievements
+                        </h4>
                         <ul className="space-y-2 mb-6">
-                          {selectedProject.achievements.map((achievement, i) => (
-                            <li key={i} className="flex items-start gap-2">
-                              <div className="h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
-                                <span className="text-xs text-primary">✓</span>
-                              </div>
-                              <span className="text-sm sm:text-base">{achievement}</span>
-                            </li>
-                          ))}
+                          {selectedProject.achievements.map(
+                            (achievement, i) => (
+                              <li key={i} className="flex items-start gap-2">
+                                <div className="h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5 flex-shrink-0">
+                                  <span className="text-xs text-primary">
+                                    ✓
+                                  </span>
+                                </div>
+                                <span className="text-sm sm:text-base">
+                                  {achievement}
+                                </span>
+                              </li>
+                            ),
+                          )}
                         </ul>
 
-                        <h4 className="text-lg font-semibold mb-3">Technologies</h4>
+                        <h4 className="text-lg font-semibold mb-3">
+                          Technologies
+                        </h4>
                         <div className="flex flex-wrap gap-2 mb-6">
                           {selectedProject.technologies.map((tech, index) => (
                             <Badge key={index} variant="secondary">
@@ -669,13 +787,19 @@ export default function RedesignedProjects() {
                           <Button
                             variant="default"
                             className="gap-2"
-                            onClick={() => handleDemoClick(selectedProject.demoUrl)}
+                            onClick={() =>
+                              handleDemoClick(selectedProject.demoUrl)
+                            }
                           >
                             <ExternalLink className="h-4 w-4" />
                             Live Demo
                           </Button>
                           <Button variant="outline" className="gap-2" asChild>
-                            <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer">
+                            <a
+                              href={selectedProject.githubUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <Github className="h-4 w-4" />
                               GitHub
                             </a>
@@ -684,18 +808,26 @@ export default function RedesignedProjects() {
                       </div>
 
                       <div>
-                        <h4 className="text-lg font-semibold mb-3">Project Info</h4>
+                        <h4 className="text-lg font-semibold mb-3">
+                          Project Info
+                        </h4>
                         <div className="space-y-4">
                           <div className="flex flex-col">
-                            <span className="text-sm text-muted-foreground">Completed</span>
+                            <span className="text-sm text-muted-foreground">
+                              Completed
+                            </span>
                             <span>{selectedProject.completed}</span>
                           </div>
                           <div className="flex flex-col">
-                            <span className="text-sm text-muted-foreground">Team Size</span>
+                            <span className="text-sm text-muted-foreground">
+                              Team Size
+                            </span>
                             <span>{selectedProject.teamSize} people</span>
                           </div>
                           <div className="flex flex-col">
-                            <span className="text-sm text-muted-foreground">Difficulty</span>
+                            <span className="text-sm text-muted-foreground">
+                              Difficulty
+                            </span>
                             <div className="flex">
                               {Array.from({ length: 5 }).map((_, i) => (
                                 <Star
@@ -722,25 +854,37 @@ export default function RedesignedProjects() {
 
                     <div className="space-y-6">
                       <div>
-                        <h4 className="text-lg font-semibold mb-2">Project Description</h4>
-                        <p className="text-sm sm:text-base">{selectedProject.longDescription}</p>
+                        <h4 className="text-lg font-semibold mb-2">
+                          Project Description
+                        </h4>
+                        <p className="text-sm sm:text-base">
+                          {selectedProject.longDescription}
+                        </p>
                       </div>
 
                       <div>
-                        <h4 className="text-lg font-semibold mb-2">Implementation Details</h4>
+                        <h4 className="text-lg font-semibold mb-2">
+                          Implementation Details
+                        </h4>
                         <p className="text-sm sm:text-base">
-                          This project was implemented using {selectedProject.technologies.join(", ")}. The development
-                          process involved careful planning, iterative development, and rigorous testing to ensure
+                          This project was implemented using{" "}
+                          {selectedProject.technologies.join(", ")}. The
+                          development process involved careful planning,
+                          iterative development, and rigorous testing to ensure
                           high-quality results.
                         </p>
                       </div>
 
                       <div>
-                        <h4 className="text-lg font-semibold mb-2">Challenges & Solutions</h4>
+                        <h4 className="text-lg font-semibold mb-2">
+                          Challenges & Solutions
+                        </h4>
                         <p className="text-sm sm:text-base">
-                          During development, we encountered several challenges including performance optimization,
-                          scalability concerns, and integration complexities. These were addressed through innovative
-                          approaches and best practices in software engineering.
+                          During development, we encountered several challenges
+                          including performance optimization, scalability
+                          concerns, and integration complexities. These were
+                          addressed through innovative approaches and best
+                          practices in software engineering.
                         </p>
                       </div>
                     </div>
@@ -767,18 +911,26 @@ export default function RedesignedProjects() {
           )}
         </DialogContent>
       </Dialog>
+
+      <div className="flex">
+        <ProjectsListModal
+          onOpenChange={setShowProjectsModal}
+          projects={sampleProjects}
+          onProjectSelect={handleProjectSelect}
+        />
+      </div>
     </SectionContainer>
-  )
+  );
 }
 
 interface ProjectCardProps {
-  project: (typeof projects)[0]
-  onSelect: () => void
+  project: (typeof projects)[0];
+  onSelect: () => void;
 }
 
 function ProjectCard({ project, onSelect }: ProjectCardProps) {
-  const [isHovered, setIsHovered] = useState(false)
-  const isClient = useIsClient()
+  const [isHovered, setIsHovered] = useState(false);
+  const isClient = useIsClient();
 
   return (
     <Card
@@ -804,7 +956,11 @@ function ProjectCard({ project, onSelect }: ProjectCardProps) {
         />
 
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <Button variant="outline" className="border-white text-white hover:bg-white/20" onClick={onSelect}>
+          <Button
+            variant="outline"
+            className="border-white text-white hover:bg-white/20"
+            onClick={onSelect}
+          >
             View Details
           </Button>
         </div>
@@ -834,7 +990,9 @@ function ProjectCard({ project, onSelect }: ProjectCardProps) {
         </div>
 
         <h3 className="font-bold mb-2 line-clamp-1">{project.title}</h3>
-        <p className="text-muted-foreground text-sm line-clamp-3 mb-4">{project.description}</p>
+        <p className="text-muted-foreground text-sm line-clamp-3 mb-4">
+          {project.description}
+        </p>
 
         <div className="flex flex-wrap gap-1 mb-4 mt-auto">
           {project.technologies.slice(0, 3).map((tech, i) => (
@@ -861,6 +1019,5 @@ function ProjectCard({ project, onSelect }: ProjectCardProps) {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
-

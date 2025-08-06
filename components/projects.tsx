@@ -1,28 +1,48 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Github, ExternalLink, Code, Star, Search, X, Calendar, Users } from "lucide-react"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
-import { useToast } from "@/components/ui/use-toast"
+import { useState } from "react";
+import {
+  Github,
+  ExternalLink,
+  Code,
+  Star,
+  Search,
+  X,
+  Calendar,
+  Users,
+} from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { useToast } from "@/components/ui/use-toast";
 
 // Project data
 const projects = [
   {
     id: 1,
-    title: "Voice Cloning & Audio Processing Suite",
-    category: "Audio Processing & AI",
-    description:
-      "Comprehensive audio processing system including real-time voice cloning, multilingual transcription, and speaker diarization.",
-    technologies: ["TensorFlow TTS", "PyTorch", "Whisper", "FastAPI", "React"],
+    title: "adsfjio",
+    category: "ajsdif",
+    description: "ajsdifo",
+    technologies: ["adifoj", "jasiodfj"],
     difficulty: 5,
     completed: "2023",
     teamSize: 3,
@@ -34,131 +54,142 @@ const projects = [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
     ],
-    details:
-      "A comprehensive voice cloning system that allows for real-time audio processing with minimal latency. The system uses state-of-the-art deep learning models to generate natural-sounding speech that matches the target voice.",
+    details: "jasdifojasdoifjaosdfij",
+  },
+];
+
+const sampleProjects: Project[] = [
+  {
+    id: 1,
+    title: "Virtual Traders",
+    category: "web",
+    description:
+      "A fullstack application for a trading card shop with a full frontend and backend",
+    longDescription:
+      "Complete e-commerce solution built with React and Express.js",
+    technologies: ["React", "Express", "Node.js", "PostgreSQL"],
+    imageUrl: "/virtual-traders.png",
+    demoUrl: "https://virtual-trader-44d67a97b643.herokuapp.com/",
+    githubUrl: "https://github.com/juscuzryancan/virtual-velocity",
+    color: "from-blue-600 to-violet-600",
+    featured: true,
+    completed: "2020",
+    teamSize: 4,
+    difficulty: 5,
+    achievements: ["Created full-stack e-commerce platform"],
+    categories: ["web", "fullstack"],
   },
   {
     id: 2,
-    title: "DALL-E 2 PyTorch Implementation",
-    category: "Generative AI",
-    description: "Open-source implementation of OpenAI's DALL-E 2 image generation model using PyTorch.",
-    technologies: ["PyTorch", "CUDA", "Docker"],
-    difficulty: 5,
-    completed: "2023-03-01",
-    teamSize: 2,
+    title: "Fitness Tracker",
+    category: "web",
+    description: "Fullstack application for a fitness tracker",
+    longDescription:
+      "Personal fitness tracking application with data visualization",
+    technologies: ["React", "Node.js", "MongoDB"],
+    imageUrl: "/placeholder.svg",
+    demoUrl: "https://lit-tor-21021-b8c9417056cb.herokuapp.com/",
+    githubUrl: "https://github.com/juscuzryancan/strangers-react",
+    color: "from-green-600 to-teal-600",
     featured: false,
-    demoUrl: "#",
-    githubUrl: "#",
-    images: ["/placeholder.svg?height=400&width=600", "/placeholder.svg?height=400&width=600"],
-    details:
-      "A PyTorch implementation of the DALL-E 2 architecture for generating high-quality images from text descriptions. The project includes optimizations for CUDA acceleration and containerization with Docker.",
+    completed: "2020",
+    teamSize: 1,
+    difficulty: 3,
+    achievements: ["Built personal fitness tracking system"],
+    categories: ["web", "health"],
   },
   {
     id: 3,
-    title: "Multi-Agent RL Environment",
-    category: "Reinforcement Learning",
-    description: "A flexible environment for training and evaluating multi-agent reinforcement learning algorithms.",
-    technologies: ["Python", "TensorFlow", "OpenAI Gym"],
-    difficulty: 4,
-    completed: "2023-01-20",
-    teamSize: 2,
-    featured: false,
+    title: "Voice Cloning Suite",
+    category: "ai",
+    description: "Real-time voice cloning and audio processing system",
+    longDescription:
+      "Advanced AI system for voice synthesis and audio manipulation",
+    technologies: ["Python", "TensorFlow", "PyTorch", "FastAPI"],
+    imageUrl: "/placeholder.svg",
     demoUrl: "#",
     githubUrl: "#",
-    images: ["/placeholder.svg?height=400&width=600"],
-    details:
-      "A customizable environment for developing and testing multi-agent reinforcement learning algorithms. The system supports various reward structures, observation spaces, and agent interactions.",
+    color: "from-purple-600 to-pink-600",
+    featured: true,
+    completed: "2023",
+    teamSize: 3,
+    difficulty: 5,
+    achievements: ["Achieved 95% voice similarity", "Real-time processing"],
+    categories: ["ai", "audio"],
   },
   {
     id: 4,
-    title: "Community Grant Management System",
-    category: "Full-Stack Development",
-    description: "Web application for managing community grant applications, reviews, and distributions.",
-    technologies: ["Next.js", "PostgreSQL", "AWS", "TypeScript"],
-    difficulty: 3,
-    completed: "2022-11-15",
+    title: "Data Analytics Platform",
+    category: "data",
+    description: "Comprehensive data analysis and visualization platform",
+    longDescription: "Business intelligence platform with advanced analytics",
+    technologies: ["Python", "Pandas", "D3.js", "PostgreSQL"],
+    imageUrl: "/placeholder.svg",
+    demoUrl: "#",
+    githubUrl: "#",
+    color: "from-orange-600 to-red-600",
+    featured: false,
+    completed: "2022",
     teamSize: 2,
-    featured: false,
-    demoUrl: "#",
-    githubUrl: "#",
-    images: ["/placeholder.svg?height=400&width=600"],
-    details:
-      "A full-stack web application that streamlines the process of managing community grants from application to distribution. The system includes features for application submission, review workflows, and financial tracking.",
-  },
-  {
-    id: 5,
-    title: "Wikipedia Connection Finder",
-    category: "Network Analysis",
-    description: "Tool for finding the shortest path between any two Wikipedia articles through hyperlinks.",
-    technologies: ["Python", "NetworkX", "Flask"],
-    difficulty: 3,
-    completed: "2022-08-10",
-    teamSize: 1,
-    featured: false,
-    demoUrl: "#",
-    githubUrl: "#",
-    images: ["/placeholder.svg?height=400&width=600"],
-    details:
-      "An application that analyzes the network structure of Wikipedia to find the shortest path between any two articles. The tool uses graph theory algorithms to navigate through the complex web of hyperlinks.",
-  },
-  {
-    id: 6,
-    title: "NYC Education Analytics",
-    category: "Data Science",
-    description: "Data analysis and visualization platform for NYC public school performance metrics.",
-    technologies: ["Python", "Pandas", "Scikit-learn", "Tableau"],
     difficulty: 4,
-    completed: "2022-05-22",
-    teamSize: 4,
-    featured: false,
-    demoUrl: "#",
-    githubUrl: "#",
-    images: ["/placeholder.svg?height=400&width=600"],
-    details:
-      "A comprehensive data analysis platform that processes and visualizes performance metrics from NYC public schools. The system includes predictive models for identifying at-risk students and schools that need additional resources.",
+    achievements: ["Processed 1M+ data points", "Real-time dashboards"],
+    categories: ["data", "analytics"],
   },
-]
+];
 
 // Filter types
-type CategoryFilter = string | null
-type DifficultyFilter = number | null
-type TeamSizeFilter = number | null
+type CategoryFilter = string | null;
+type DifficultyFilter = number | null;
+type TeamSizeFilter = number | null;
 
 export default function Projects() {
-  const [searchQuery, setSearchQuery] = useState("")
-  const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>(null)
-  const [difficultyFilter, setDifficultyFilter] = useState<DifficultyFilter>(null)
-  const [teamSizeFilter, setTeamSizeFilter] = useState<TeamSizeFilter>(null)
-  const [selectedProject, setSelectedProject] = useState<(typeof projects)[0] | null>(null)
-  const [isDialogOpen, setIsDialogOpen] = useState(false)
-  const { toast } = useToast()
+  const [searchQuery, setSearchQuery] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>(null);
+  const [difficultyFilter, setDifficultyFilter] =
+    useState<DifficultyFilter>(null);
+  const [teamSizeFilter, setTeamSizeFilter] = useState<TeamSizeFilter>(null);
+  const [selectedProject, setSelectedProject] = useState<
+    (typeof projects)[0] | null
+  >(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [showProjectsModal, setShowProjectsModal] = useState(false);
+  const { toast } = useToast();
 
-  const featuredProject = projects.find((project) => project.featured)
+  const featuredProject = projects.find((project) => project.featured);
 
   // Filter projects based on search and filters
   const filteredProjects = projects.filter((project) => {
     const matchesSearch =
       project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.technologies.some((tech) => tech.toLowerCase().includes(searchQuery.toLowerCase()))
+      project.technologies.some((tech) =>
+        tech.toLowerCase().includes(searchQuery.toLowerCase()),
+      );
 
-    const matchesCategory = !categoryFilter || project.category === categoryFilter
-    const matchesDifficulty = !difficultyFilter || project.difficulty === difficultyFilter
-    const matchesTeamSize = !teamSizeFilter || project.teamSize === teamSizeFilter
+    const matchesCategory =
+      !categoryFilter || project.category === categoryFilter;
+    const matchesDifficulty =
+      !difficultyFilter || project.difficulty === difficultyFilter;
+    const matchesTeamSize =
+      !teamSizeFilter || project.teamSize === teamSizeFilter;
 
-    return matchesSearch && matchesCategory && matchesDifficulty && matchesTeamSize
-  })
+    return (
+      matchesSearch && matchesCategory && matchesDifficulty && matchesTeamSize
+    );
+  });
 
   // Get unique categories for filter
-  const categories = Array.from(new Set(projects.map((project) => project.category)))
+  const categories = Array.from(
+    new Set(projects.map((project) => project.category)),
+  );
 
   // Reset all filters
   const resetFilters = () => {
-    setSearchQuery("")
-    setCategoryFilter(null)
-    setDifficultyFilter(null)
-    setTeamSizeFilter(null)
-  }
+    setSearchQuery("");
+    setCategoryFilter(null);
+    setDifficultyFilter(null);
+    setTeamSizeFilter(null);
+  };
 
   // Handle demo click
   const handleDemoClick = (url: string) => {
@@ -166,9 +197,9 @@ export default function Projects() {
       title: "Demo Link",
       description: "Opening demo in a new tab...",
       duration: 3000,
-    })
-    window.open(url, "_blank")
-  }
+    });
+    window.open(url, "_blank");
+  };
 
   return (
     <section id="projects" className="py-12">
@@ -179,10 +210,7 @@ export default function Projects() {
         viewport={{ once: true }}
       >
         <h2 className="text-3xl font-bold text-center mb-4">Projects</h2>
-        <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
-          Explore my portfolio of AI, machine learning, and software development projects. Each project demonstrates
-          different skills and technologies.
-        </p>
+        <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12"></p>
       </motion.div>
 
       {featuredProject && (
@@ -216,13 +244,17 @@ export default function Projects() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                     <div className="p-4">
                       <Badge className="mb-2">{featuredProject.category}</Badge>
-                      <h3 className="text-xl font-bold">{featuredProject.title}</h3>
+                      <h3 className="text-xl font-bold">
+                        {featuredProject.title}
+                      </h3>
                     </div>
                   </div>
                 </div>
 
                 <div className="p-6">
-                  <p className="text-muted-foreground mb-6">{featuredProject.description}</p>
+                  <p className="text-muted-foreground mb-6">
+                    {featuredProject.description}
+                  </p>
 
                   <div className="flex flex-wrap gap-2 mb-6">
                     {featuredProject.technologies.map((tech, index) => (
@@ -274,15 +306,24 @@ export default function Projects() {
                       size="sm"
                       className="gap-2"
                       onClick={() => {
-                        setSelectedProject(featuredProject)
-                        setIsDialogOpen(true)
+                        setSelectedProject(featuredProject);
+                        setIsDialogOpen(true);
                       }}
                     >
                       <Code className="h-4 w-4" />
                       View Details
                     </Button>
-                    <Button variant="outline" size="sm" className="gap-2" asChild>
-                      <a href={featuredProject.githubUrl} target="_blank" rel="noopener noreferrer">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="gap-2"
+                      asChild
+                    >
+                      <a
+                        href={featuredProject.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Github className="h-4 w-4" />
                         GitHub
                       </a>
@@ -314,7 +355,10 @@ export default function Projects() {
           </div>
 
           <div className="flex flex-wrap gap-2">
-            <Select value={categoryFilter || ""} onValueChange={(value) => setCategoryFilter(value || null)}>
+            <Select
+              value={categoryFilter || ""}
+              onValueChange={(value) => setCategoryFilter(value || null)}
+            >
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Category" />
               </SelectTrigger>
@@ -330,7 +374,9 @@ export default function Projects() {
 
             <Select
               value={difficultyFilter?.toString() || ""}
-              onValueChange={(value) => setDifficultyFilter(value ? Number.parseInt(value) : null)}
+              onValueChange={(value) =>
+                setDifficultyFilter(value ? Number.parseInt(value) : null)
+              }
             >
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Difficulty" />
@@ -358,8 +404,15 @@ export default function Projects() {
         </motion.div>
 
         {filteredProjects.length === 0 ? (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-12">
-            <p className="text-muted-foreground">No projects match your filters. Try adjusting your search criteria.</p>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center py-12"
+          >
+            <p className="text-muted-foreground">
+              No projects match your filters. Try adjusting your search
+              criteria.
+            </p>
             <Button variant="link" onClick={resetFilters} className="mt-2">
               Reset Filters
             </Button>
@@ -380,8 +433,12 @@ export default function Projects() {
                   >
                     <div className="p-6">
                       <Badge className="mb-3">{project.category}</Badge>
-                      <h3 className="text-lg font-bold mb-2">{project.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{project.description}</p>
+                      <h3 className="text-lg font-bold mb-2">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                        {project.description}
+                      </p>
 
                       <div className="flex flex-wrap gap-1 mb-4">
                         {project.technologies.slice(0, 3).map((tech, i) => (
@@ -405,7 +462,9 @@ export default function Projects() {
                             />
                           ))}
                         </div>
-                        <div className="text-xs text-muted-foreground">Team: {project.teamSize}</div>
+                        <div className="text-xs text-muted-foreground">
+                          Team: {project.teamSize}
+                        </div>
                       </div>
 
                       <Button
@@ -413,8 +472,8 @@ export default function Projects() {
                         size="sm"
                         className="w-full"
                         onClick={() => {
-                          setSelectedProject(project)
-                          setIsDialogOpen(true)
+                          setSelectedProject(project);
+                          setIsDialogOpen(true);
                         }}
                       >
                         View Details
@@ -435,8 +494,12 @@ export default function Projects() {
                 <div className="flex justify-between items-start">
                   <div>
                     <Badge className="mb-2">{selectedProject.category}</Badge>
-                    <DialogTitle className="text-2xl">{selectedProject.title}</DialogTitle>
-                    <DialogDescription className="mt-2">{selectedProject.description}</DialogDescription>
+                    <DialogTitle className="text-2xl">
+                      {selectedProject.title}
+                    </DialogTitle>
+                    <DialogDescription className="mt-2">
+                      {selectedProject.description}
+                    </DialogDescription>
                   </div>
                   <div className="flex">
                     {Array.from({ length: 5 }).map((_, i) => (
@@ -460,10 +523,14 @@ export default function Projects() {
                   <TabsContent value="overview" className="mt-0 h-full">
                     <div className="grid md:grid-cols-3 gap-6">
                       <div className="md:col-span-2">
-                        <h4 className="text-lg font-semibold mb-3">Project Details</h4>
+                        <h4 className="text-lg font-semibold mb-3">
+                          Project Details
+                        </h4>
                         <p className="mb-6">{selectedProject.details}</p>
 
-                        <h4 className="text-lg font-semibold mb-3">Technologies</h4>
+                        <h4 className="text-lg font-semibold mb-3">
+                          Technologies
+                        </h4>
                         <div className="flex flex-wrap gap-2 mb-6">
                           {selectedProject.technologies.map((tech, index) => (
                             <Badge key={index} variant="secondary">
@@ -476,13 +543,19 @@ export default function Projects() {
                           <Button
                             variant="default"
                             className="gap-2"
-                            onClick={() => handleDemoClick(selectedProject.demoUrl)}
+                            onClick={() =>
+                              handleDemoClick(selectedProject.demoUrl)
+                            }
                           >
                             <ExternalLink className="h-4 w-4" />
                             Live Demo
                           </Button>
                           <Button variant="outline" className="gap-2" asChild>
-                            <a href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer">
+                            <a
+                              href={selectedProject.githubUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <Github className="h-4 w-4" />
                               GitHub
                             </a>
@@ -491,18 +564,26 @@ export default function Projects() {
                       </div>
 
                       <div>
-                        <h4 className="text-lg font-semibold mb-3">Project Info</h4>
+                        <h4 className="text-lg font-semibold mb-3">
+                          Project Info
+                        </h4>
                         <div className="space-y-4">
                           <div className="flex flex-col">
-                            <span className="text-sm text-muted-foreground">Completed</span>
+                            <span className="text-sm text-muted-foreground">
+                              Completed
+                            </span>
                             <span>{selectedProject.completed}</span>
                           </div>
                           <div className="flex flex-col">
-                            <span className="text-sm text-muted-foreground">Team Size</span>
+                            <span className="text-sm text-muted-foreground">
+                              Team Size
+                            </span>
                             <span>{selectedProject.teamSize} people</span>
                           </div>
                           <div className="flex flex-col">
-                            <span className="text-sm text-muted-foreground">Difficulty</span>
+                            <span className="text-sm text-muted-foreground">
+                              Difficulty
+                            </span>
                             <div className="flex">
                               {Array.from({ length: 5 }).map((_, i) => (
                                 <Star
@@ -536,11 +617,19 @@ export default function Projects() {
                   <TabsContent value="demo" className="mt-0">
                     <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
                       <div className="text-center p-6">
-                        <h4 className="text-lg font-semibold mb-2">Interactive Demo</h4>
+                        <h4 className="text-lg font-semibold mb-2">
+                          Interactive Demo
+                        </h4>
                         <p className="text-muted-foreground mb-4">
-                          Experience the project firsthand with our interactive demo.
+                          Experience the project firsthand with our interactive
+                          demo.
                         </p>
-                        <Button onClick={() => handleDemoClick(selectedProject.demoUrl)} className="gap-2">
+                        <Button
+                          onClick={() =>
+                            handleDemoClick(selectedProject.demoUrl)
+                          }
+                          className="gap-2"
+                        >
                           <ExternalLink className="h-4 w-4" />
                           Launch Demo
                         </Button>
@@ -553,7 +642,17 @@ export default function Projects() {
           )}
         </DialogContent>
       </Dialog>
-    </section>
-  )
-}
 
+      <Button onClick={() => setShowProjectsModal(true)} className="w-full">
+        View All Projects ({sampleProjects.length})
+      </Button>
+
+      <ProjectsListModal
+        isOpen={showProjectsModal}
+        onOpenChange={setShowProjectsModal}
+        projects={sampleProjects}
+        onProjectSelect={handleProjectSelect}
+      />
+    </section>
+  );
+}
