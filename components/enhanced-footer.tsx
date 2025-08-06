@@ -5,7 +5,6 @@ import type React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, ArrowUp, MapPin, CheckCircle } from "lucide-react";
-import { ThemePreview } from "@/components/theme-preview";
 
 export default function EnhancedFooter() {
   const scrollToTop = () => {
@@ -72,9 +71,6 @@ export default function EnhancedFooter() {
                 <MapPin className="h-4 w-4 text-primary" />
                 <span>Bay Area, CA</span>
               </li>
-              <div className="mt-6">
-                <ThemePreview />
-              </div>
             </motion.div>
           </div>
         </div>
