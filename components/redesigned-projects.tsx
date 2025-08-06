@@ -911,16 +911,14 @@ export default function RedesignedProjects() {
           )}
         </DialogContent>
       </Dialog>
-      <Button onClick={() => setShowProjectsModal(true)} className="w-full">
-        View All Projects ({sampleProjects.length})
-      </Button>
 
-      <ProjectsListModal
-        isOpen={showProjectsModal}
-        onOpenChange={setShowProjectsModal}
-        projects={sampleProjects}
-        onProjectSelect={handleProjectSelect}
-      />
+      <div className="flex">
+        <ProjectsListModal
+          onOpenChange={setShowProjectsModal}
+          projects={sampleProjects}
+          onProjectSelect={handleProjectSelect}
+        />
+      </div>
     </SectionContainer>
   );
 }
