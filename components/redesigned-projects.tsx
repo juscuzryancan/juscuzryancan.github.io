@@ -33,19 +33,13 @@ import {
   Users,
   Star,
   Layers,
-  Cpu,
-  Globe,
-  Database,
-  BookOpen,
-  Share2,
-  Shield,
-  MessageSquare,
-  Zap,
   Loader2,
 } from "lucide-react";
-import ProjectsListModal, { Project } from "./projects-list-modal";
+import ProjectsListModal from "./projects-list-modal";
 
-const sampleProjects: Project[] = [
+type Project = any;
+
+const sampleProjects: any[] = [
   {
     id: 1,
     title: "Virtual Traders",
@@ -124,19 +118,6 @@ const sampleProjects: Project[] = [
   },
 ];
 
-// Project categories
-const projectCategories = [
-  // { id: "all", name: "All Projects" },
-  // { id: "ai", name: "AI & ML", icon: <Cpu className="h-4 w-4" /> },
-  // { id: "audio", name: "Audio", icon: <Zap className="h-4 w-4" /> },
-  // { id: "web", name: "Web Dev", icon: <Globe className="h-4 w-4" /> },
-  // { id: "data", name: "Data Science", icon: <Database className="h-4 w-4" /> },
-  // { id: "network", name: "Network", icon: <Share2 className="h-4 w-4" /> },
-  // { id: "security", name: "Security", icon: <Shield className="h-4 w-4" /> },
-  // { id: "communication", name: "Communication", icon: <MessageSquare className="h-4 w-4" /> },
-  // { id: "research", name: "Research", icon: <BookOpen className="h-4 w-4" /> },
-];
-
 // Project data
 const projects = [
   {
@@ -166,7 +147,7 @@ const projects = [
     technologies: ["React"],
     imageUrl: "",
     demoUrl: "https://lit-tor-21021-b8c9417056cb.herokuapp.com/",
-    githubUrl: "https://github.com/juscuzryancan/strangers-react",
+    githubUrl: "https://github.com/juscuzryancan/FitnessTrac.kr",
     color: "from-blue-600 to-violet-600",
     featured: true,
     completed: "2020",
@@ -191,178 +172,39 @@ const projects = [
     difficulty: 3,
     achievements: ["Created"],
   },
-  {
-    id: 4,
-    title: "Snake Game",
-    category: "web",
-    description: "Snake Game",
-    longDescription: "",
-    technologies: ["Vanilla JS", "HTML", "CSS"],
-    imageUrl: "",
-    demoUrl: "https://suspicious-boyd-f07649.netlify.app/",
-    githubUrl: "https://github.com/juscuzryancan/strangers-react",
-    color: "from-blue-600 to-violet-600",
-    featured: true,
-    completed: "2020",
-    teamSize: 1,
-    difficulty: 3,
-    achievements: ["Created"],
-  },
-  {
-    id: 5,
-    title: "Minesweeper",
-    category: "web",
-    description: "Minesweeper game",
-    longDescription: "",
-    technologies: ["Vanilla JS", "HTML", "CSS"],
-    imageUrl: "",
-    demoUrl: "https://flamboyant-liskov-0c5218.netlify.app/minesweeper/",
-    githubUrl: "",
-    color: "from-blue-600 to-violet-600",
-    featured: true,
-    completed: "2020",
-    teamSize: 1,
-    difficulty: 3,
-    achievements: ["Created"],
-  },
-  // {
-  //   id: 1,
-  //   title: "Voice Cloning & Audio Processing Suite",
-  //   category: "audio",
-  //   description:
-  //     "Comprehensive audio processing system including real-time voice cloning, multilingual transcription, and speaker diarization.",
-  //   longDescription:
-  //     "A state-of-the-art voice cloning system that allows for real-time and one-shot audio processing with minimal latency. The system uses deep learning models to generate natural-sounding speech that matches the target voice with unprecedented accuracy and emotional range, enabling applications in accessibility, personalized audiobooks, and more.",
-  //   technologies: ["TensorFlow TTS", "PyTorch", "Whisper", "FastAPI", "React"],
-  //   imageUrl: "/placeholder.svg?height=600&width=800",
-  //   demoUrl: "#",
-  //   githubUrl: "https://github.com/juscuzryancan",
-  //   color: "from-blue-600 to-violet-600",
-  //   featured: true,
-  //   completed: "2023",
-  //   teamSize: 3,
-  //   difficulty: 5,
-  //   achievements: [
-  //     "Developed one-shot voice cloning requiring only 5 seconds of audio",
-  //     "Reduced model size by 60% while maintaining voice quality",
-  //     "Achieved 80ms latency for real-time applications",
-  //     "Implemented multi-speaker voice cloning with 95% accuracy",
-  //   ],
-  // },
-  // {
-  //   id: 2,
-  //   title: "DALL-E 2 PyTorch Implementation",
-  //   category: "ai",
-  //   description: "Open-source implementation of OpenAI's DALL-E 2 image generation model using PyTorch.",
-  //   longDescription:
-  //     "A PyTorch implementation of the DALL-E 2 architecture for generating high-quality images from text descriptions. The project includes optimizations for CUDA acceleration and containerization with Docker for easy deployment and scaling.",
-  //   technologies: ["PyTorch", "CUDA", "Docker", "HuggingFace", "Python"],
-  //   imageUrl: "/placeholder.svg?height=600&width=800",
-  //   demoUrl: "#",
-  //   githubUrl: "https://github.com/juscuzryancan",
-  //   color: "from-purple-600 to-pink-600",
-  //   featured: false,
-  //   completed: "2023",
-  //   teamSize: 2,
-  //   difficulty: 5,
-  //   achievements: [
-  //     "Implemented the full DALL-E 2 architecture with PyTorch",
-  //     "Optimized for CUDA acceleration with 40% performance improvement",
-  //     "Created Docker containers for easy deployment",
-  //     "Built a web interface for text-to-image generation",
-  //   ],
-  // },
-  // {
-  //   id: 3,
-  //   title: "Multi-Agent RL Environment",
-  //   category: "ai",
-  //   description: "A flexible environment for training and evaluating multi-agent reinforcement learning algorithms.",
-  //   longDescription:
-  //     "A customizable environment for developing and testing multi-agent reinforcement learning algorithms. The system supports various reward structures, observation spaces, and agent interactions.",
-  //   technologies: ["Python", "TensorFlow", "OpenAI Gym", "Ray", "Docker"],
-  //   imageUrl: "/placeholder.svg?height=600&width=800",
-  //   demoUrl: "#",
-  //   githubUrl: "https://github.com/juscuzryancan",
-  //   color: "from-green-600 to-teal-600",
-  //   featured: false,
-  //   completed: "2023",
-  //   teamSize: 2,
-  //   difficulty: 4,
-  //   achievements: [
-  //     "Designed a flexible multi-agent environment supporting various RL algorithms",
-  //     "Implemented custom reward structures and observation spaces",
-  //     "Created visualization tools for agent behavior analysis",
-  //     "Benchmarked performance against standard environments",
-  //   ],
-  // },
   // {
   //   id: 4,
-  //   title: "Community Grant Management System",
+  //   title: "Snake Game",
   //   category: "web",
-  //   description: "Web application for managing community grant applications, reviews, and distributions.",
-  //   longDescription:
-  //     "A full-stack web application that streamlines the process of managing community grants from application to distribution. The system includes features for application submission, review workflows, and financial tracking.",
-  //   technologies: ["Next.js", "PostgreSQL", "AWS", "TypeScript", "Prisma"],
-  //   imageUrl: "/placeholder.svg?height=600&width=800",
-  //   demoUrl: "#",
-  //   githubUrl: "https://github.com/juscuzryancan",
-  //   color: "from-amber-600 to-orange-600",
-  //   featured: false,
-  //   completed: "2022",
-  //   teamSize: 2,
+  //   description: "Snake Game",
+  //   longDescription: "",
+  //   technologies: ["Vanilla JS", "HTML", "CSS"],
+  //   imageUrl: "",
+  //   demoUrl: "https://suspicious-boyd-f07649.netlify.app/",
+  //   githubUrl: "https://github.com/juscuzryancan/strangers-react",
+  //   color: "from-blue-600 to-violet-600",
+  //   featured: true,
+  //   completed: "2020",
+  //   teamSize: 1,
   //   difficulty: 3,
-  //   achievements: [
-  //     "Built a full-stack application with Next.js and PostgreSQL",
-  //     "Implemented secure authentication and authorization",
-  //     "Created a workflow system for grant application review",
-  //     "Deployed on AWS with CI/CD pipeline",
-  //   ],
+  //   achievements: ["Created"],
   // },
   // {
   //   id: 5,
-  //   title: "Wikipedia Connection Finder",
-  //   category: "network",
-  //   description: "Tool for finding the shortest path between any two Wikipedia articles through hyperlinks.",
-  //   longDescription:
-  //     "An application that analyzes the network structure of Wikipedia to find the shortest path between any two articles. The tool uses graph theory algorithms to navigate through the complex web of hyperlinks.",
-  //   technologies: ["Python", "NetworkX", "Flask", "MongoDB", "D3.js"],
-  //   imageUrl: "/placeholder.svg?height=600&width=800",
-  //   demoUrl: "#",
-  //   githubUrl: "https://github.com/juscuzryancan",
-  //   color: "from-blue-600 to-cyan-600",
-  //   featured: false,
-  //   completed: "2022",
+  //   title: "Minesweeper",
+  //   category: "web",
+  //   description: "Minesweeper game",
+  //   longDescription: "",
+  //   technologies: ["Vanilla JS", "HTML", "CSS"],
+  //   imageUrl: "",
+  //   demoUrl: "https://flamboyant-liskov-0c5218.netlify.app/minesweeper/",
+  //   githubUrl: "",
+  //   color: "from-blue-600 to-violet-600",
+  //   featured: true,
+  //   completed: "2020",
   //   teamSize: 1,
   //   difficulty: 3,
-  //   achievements: [
-  //     "Implemented graph algorithms to find shortest paths between Wikipedia articles",
-  //     "Created a web interface with Flask and D3.js",
-  //     "Optimized performance for large-scale graph traversal",
-  //     "Built a caching system with MongoDB for faster results",
-  //   ],
-  // },
-  // {
-  //   id: 6,
-  //   title: "NYC Education Analytics",
-  //   category: "data",
-  //   description: "Data analysis and visualization platform for NYC public school performance metrics.",
-  //   longDescription:
-  //     "A comprehensive data analysis platform that processes and visualizes performance metrics from NYC public schools. The system includes predictive models for identifying at-risk students and schools that need additional resources.",
-  //   technologies: ["Python", "Pandas", "Scikit-learn", "Tableau", "R"],
-  //   imageUrl: "/placeholder.svg?height=600&width=800",
-  //   demoUrl: "#",
-  //   githubUrl: "https://github.com/juscuzryancan",
-  //   color: "from-indigo-600 to-blue-600",
-  //   featured: false,
-  //   completed: "2022",
-  //   teamSize: 4,
-  //   difficulty: 4,
-  //   achievements: [
-  //     "Analyzed NYC public school data to identify performance patterns",
-  //     "Built predictive models for student success with Scikit-learn",
-  //     "Created interactive visualizations with Tableau",
-  //     "Presented findings to education stakeholders",
-  //   ],
+  //   achievements: ["Created"],
   // },
 ];
 
@@ -643,28 +485,6 @@ export default function RedesignedProjects() {
           onValueChange={setSelectedCategory}
           className="w-full"
         >
-          <div className="overflow-x-auto pb-2 no-scrollbar">
-            <TabsList className="flex justify-start gap-2 mb-8 bg-transparent w-max mx-auto">
-              {projectCategories.map((category) => (
-                <TabsTrigger
-                  key={category.id}
-                  value={category.id}
-                  className={cn(
-                    "px-3 py-2 rounded-full text-xs sm:text-sm font-medium transition-all data-[state=active]:shadow-lg whitespace-nowrap",
-                    selectedCategory === category.id
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-muted hover:bg-muted/80",
-                  )}
-                >
-                  <div className="flex items-center gap-1 sm:gap-2">
-                    {category.icon && category.icon}
-                    <span>{category.name}</span>
-                  </div>
-                </TabsTrigger>
-              ))}
-            </TabsList>
-          </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatePresence>
               {filteredProjects.map((project, index) => (
@@ -913,11 +733,7 @@ export default function RedesignedProjects() {
       </Dialog>
 
       <div className="flex">
-        <ProjectsListModal
-          onOpenChange={setShowProjectsModal}
-          projects={sampleProjects}
-          onProjectSelect={handleProjectSelect}
-        />
+        <ProjectsListModal />
       </div>
     </SectionContainer>
   );

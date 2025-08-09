@@ -651,7 +651,6 @@ export default function Projects() {
         isOpen={showProjectsModal}
         onOpenChange={setShowProjectsModal}
         projects={sampleProjects}
-        onProjectSelect={handleProjectSelect}
       />
     </section>
   );
