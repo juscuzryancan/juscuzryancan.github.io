@@ -72,7 +72,7 @@ export default function ProjectsListModal({}: ProjectsListModalProps) {
         <Button>View All Projects</Button>
       </DialogTrigger>
       <DialogOverlay>
-        <DialogContent className="max-w-[80vw] min-[400px] max-h-[500px] flex-1 overflow-scroll">
+        <DialogContent className="max-w-[1300px] min-[400px] max-h-[500px] flex-1 overflow-scroll">
           <DialogHeader>
             <DialogTitle>Projects</DialogTitle>
           </DialogHeader>
@@ -87,7 +87,7 @@ export default function ProjectsListModal({}: ProjectsListModalProps) {
                 technology,
               }) => (
                 <Card
-                  className="flex flex-col flex-grow md:max-w-[280px] md:min-w-[260w]"
+                  className="flex flex-col basis-[300px] flex-grow md:min-w-[260w]"
                   key={title}
                 >
                   <CardTitle className="p-6 pb-3">{title}</CardTitle>
