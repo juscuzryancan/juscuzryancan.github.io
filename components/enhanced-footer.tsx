@@ -52,7 +52,7 @@ export default function EnhancedFooter() {
             >
               <h3 className="font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2">
-                <FooterLink href="#" label="Home" />
+                <FooterLink href="#hero" label="Home" />
                 <FooterLink href="#skills" label="Skills" />
                 <FooterLink href="#experience" label="Experience" />
                 <FooterLink href="#projects" label="Projects" />

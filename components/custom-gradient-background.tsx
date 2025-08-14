@@ -1,16 +1,21 @@
-"use client"
-import { motion } from "framer-motion"
-import { cn } from "@/lib/utils"
-import type { ReactNode } from "react"
-import { useIsClient } from "@/hooks/use-is-client"
+"use client";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
+import { useIsClient } from "@/hooks/use-is-client";
 
 interface CustomGradientBackgroundProps {
-  children: ReactNode
-  className?: string
+  children: ReactNode;
+  className?: string;
+  id?: string;
 }
 
-export function CustomGradientBackground({ children, className }: CustomGradientBackgroundProps) {
-  const isClient = useIsClient()
+export function CustomGradientBackground({
+  children,
+  className,
+  id,
+}: CustomGradientBackgroundProps) {
+  const isClient = useIsClient();
 
   // Don't render animations until client-side
   if (!isClient) {
@@ -19,11 +24,11 @@ export function CustomGradientBackground({ children, className }: CustomGradient
         <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-purple-500/5 -z-10" />
         {children}
       </div>
-    )
+    );
   }
 
   return (
-    <div className={cn("relative overflow-hidden", className)}>
+    <div id={id} className={cn("relative overflow-hidden", className)}>
       {/* Static gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-purple-500/5 -z-10" />
 
@@ -69,6 +74,5 @@ export function CustomGradientBackground({ children, className }: CustomGradient
 
       {children}
     </div>
-  )
+  );
 }
-

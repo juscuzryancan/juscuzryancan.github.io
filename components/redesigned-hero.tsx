@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CustomGradientBackground } from "@/components/custom-gradient-background";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
-import { Github, Linkedin, Mail, ArrowDown, ExternalLink } from "lucide-react";
+import { Github, Linkedin, ArrowDown, ExternalLink } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { useIsClient } from "@/hooks/use-is-client";
 
@@ -88,7 +88,10 @@ export default function RedesignedHero() {
   };
 
   return (
-    <CustomGradientBackground className="min-h-screen flex items-center">
+    <CustomGradientBackground
+      id="hero"
+      className="min-h-screen flex items-center"
+    >
       <motion.div
         ref={containerRef}
         style={isClient ? { opacity, scale, y } : {}}

@@ -40,27 +40,6 @@ const projects: Project[] = [
     description: loremIpsum,
     technology: ["React", "Postgres"],
   },
-  {
-    title: "Project 3",
-    deploymentLink: "https:google.com",
-    githubLink: "https://github.com/juscuzryancan",
-    description: loremIpsum,
-    technology: ["React", "Postgres"],
-  },
-  {
-    title: "Project 4",
-    deploymentLink: "https:google.com",
-    githubLink: "https://github.com/juscuzryancan",
-    description: loremIpsum,
-    technology: ["React", "Postgres"],
-  },
-  {
-    title: "Project 5",
-    deploymentLink: "https:google.com",
-    githubLink: "https://github.com/juscuzryancan",
-    description: loremIpsum,
-    technology: ["React", "Postgres"],
-  },
 ];
 
 type ProjectsListModalProps = {};
@@ -72,7 +51,7 @@ export default function ProjectsListModal({}: ProjectsListModalProps) {
         <Button>View All Projects</Button>
       </DialogTrigger>
       <DialogOverlay>
-        <DialogContent className="max-w-[1300px] min-[400px] max-h-[500px] flex-1 overflow-scroll">
+        <DialogContent className="max-w-[1290px] w-[85vw] min-[400px] max-h-[500px] flex-1 overflow-scroll">
           <DialogHeader>
             <DialogTitle>Projects</DialogTitle>
           </DialogHeader>
