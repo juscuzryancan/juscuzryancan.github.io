@@ -282,7 +282,7 @@ export default function RedesignedSkills() {
       />
 
       <ScrollReveal>
-        <Tabs defaultValue="ml-ai" onValueChange={setActiveCategory} className="w-full">
+        <Tabs defaultValue="programming" onValueChange={setActiveCategory} className="w-full">
           <div className="flex flex-col justify-center gap-12 mb-8">
           <TabsList className="flex flex-wrap justify-center gap-2  bg-transparent">
             {skillCategories.map((category) => (
